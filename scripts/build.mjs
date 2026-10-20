@@ -1,5 +1,6 @@
 // Checks the proposed constitution against the form's word-for-word statements,
-// writes the proposed documents as Markdown, and builds a standalone viewer.
+// writes the proposed documents as Markdown, and builds a standalone viewer and
+// the GitHub Pages site (site/).
 // Usage: node scripts/build.mjs
 import fs from "node:fs";
 import path from "node:path";
@@ -86,6 +87,15 @@ const page = fs.readFileSync(path.join(root, "index.html"), "utf8")
 const standalone = `<!doctype html>\n<html lang="en">\n<head>\n<meta charset="utf-8">\n<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">\n<style>body{margin:0}[hidden]{display:none!important}img{max-width:100%}</style>\n</head>\n<body>\n${page}\n</body>\n</html>\n`;
 fs.writeFileSync(path.join(root, "proposed", "MITOC_Review_viewer.html"), standalone);
 console.log("wrote proposed/MITOC_Review_viewer.html");
+
+// GitHub Pages site: the standalone viewer as index.html, plus the Markdown files.
+const site = path.join(root, "site");
+fs.rmSync(site, { recursive: true, force: true });
+fs.mkdirSync(site);
+fs.writeFileSync(path.join(site, "index.html"), standalone);
+fs.writeFileSync(path.join(site, ".nojekyll"), "");
+for (const key of Object.keys(D.docs)) fs.copyFileSync(path.join(root, "proposed", D.docs[key].file + ".md"), path.join(site, D.docs[key].file + ".md"));
+console.log("wrote site/");
 
 if (failed) { console.error("Checks failed."); process.exit(1); }
 console.log("All checks passed.");
