@@ -1,0 +1,796 @@
+<title>MITOC Constitution Review</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: sticky header with tabs and a view switcher; the document sits on a paper sheet,
+   and in the Changes view each block's reviewer notes sit in a right-hand margin column. */
+:root {
+  --bg: #f0f0f1;
+  --paper: #ffffff;
+  --fg: #1e1f22;
+  --muted: #63666c;
+  --line: #d9dadd;
+  --accent: #45484e;
+  --accent-soft: #e7e8ea;
+  --ins: #2c5a4c;
+  --ins-bg: #e1ece7;
+  --del: #b4232a;
+  --del-bg: #fbe7e7;
+  --urgent: #b4232a;
+  --urgent-bg: #fbe7e7;
+  --rec: #8a5a00;
+  --rec-bg: #fbf0d9;
+  --minor: #5b5e64;
+  --minor-bg: #e9eaec;
+  --flash: #fff3b8;
+  --shadow: rgb(20 20 25 / 0.16);
+  --ins-strong: #c3dbd1;
+  --del-strong: #f5c4c4;
+  --font-doc: "Source Serif 4", "Iowan Old Style", Georgia, serif;
+  --font-ui: "Public Sans", -apple-system, "Segoe UI", system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #141517; --paper: #1c1d20; --fg: #e5e6e8; --muted: #9b9ea4; --line: #303237;
+    --accent: #c8cbd0; --accent-soft: #2b2d31;
+    --ins: #7fc0aa; --ins-bg: #23332d; --del: #ff8f8f; --del-bg: #3d1f21;
+    --urgent: #ff8f8f; --urgent-bg: #3d1f21; --rec: #f0c26a; --rec-bg: #3a2e14; --minor: #a9acb2; --minor-bg: #292b2f;
+    --flash: #4a4320; --shadow: rgb(0 0 0 / 0.5); --ins-strong: #305246; --del-strong: #6a2c30;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #141517; --paper: #1c1d20; --fg: #e5e6e8; --muted: #9b9ea4; --line: #303237;
+  --accent: #c8cbd0; --accent-soft: #2b2d31;
+  --ins: #7fc0aa; --ins-bg: #23332d; --del: #ff8f8f; --del-bg: #3d1f21;
+  --urgent: #ff8f8f; --urgent-bg: #3d1f21; --rec: #f0c26a; --rec-bg: #3a2e14; --minor: #a9acb2; --minor-bg: #292b2f;
+  --flash: #4a4320; --shadow: rgb(0 0 0 / 0.5); --ins-strong: #305246; --del-strong: #6a2c30;
+  color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--fg); font-family: var(--font-ui); font-size: 15px; line-height: 1.5; }
+body::before { content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); }
+.wrap { max-width: 1240px; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+button { font: inherit; color: inherit; }
+button:focus-visible, a:focus-visible, summary:focus-visible, input:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+/* Header */
+header.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; background: var(--paper); border-bottom: 1px solid var(--line); }
+.brand { display: flex; flex-direction: column; justify-content: center; padding-block: 6px; margin-right: 8px; }
+.brand h1 { margin: 0; font-family: var(--font-doc); font-weight: 700; font-size: 1rem; line-height: 1.2; letter-spacing: -0.01em; white-space: nowrap; }
+.brand .due { font-size: 0.72rem; color: var(--muted); line-height: 1.3; }
+.brand .due strong { color: var(--urgent); font-weight: 600; }
+.bar { display: flex; flex-wrap: wrap; align-items: center; gap: 0 12px; min-height: 48px; }
+.bar .tools { margin-left: auto; }
+.tabs { display: flex; gap: 2px; }
+.tab { border: 0; background: none; padding: 13px 10px 11px; font-weight: 600; font-size: 0.85rem; color: var(--muted); border-bottom: 3px solid transparent; cursor: pointer; }
+.tab[aria-selected="true"] { color: var(--fg); border-bottom-color: var(--accent); }
+.tools { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; padding-block: 6px; }
+.seg { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; }
+.seg button { border: 0; background: var(--paper); padding: 4px 10px; font-size: 0.8rem; font-weight: 500; cursor: pointer; color: var(--muted); }
+.seg button + button { border-left: 1px solid var(--line); }
+.seg button[aria-pressed="true"] { background: var(--accent); color: var(--paper); }
+.btn { border: 1px solid var(--line); background: var(--paper); border-radius: 7px; padding: 4px 10px; font-size: 0.8rem; font-weight: 500; cursor: pointer; }
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); color: var(--paper); border-color: var(--accent); }
+.btn.primary:hover { color: var(--paper); filter: brightness(1.08); }
+
+main { padding-block: 14px 48px; }
+/* Dismissible explainer above the document. */
+.intro-wrap { padding-top: 14px; }
+.intro { position: relative; background: var(--paper); border: 1px solid var(--line); border-radius: 6px; padding: 14px 44px 14px 18px; font-size: 0.88rem; line-height: 1.45; }
+.intro h2 { margin: 0 0 8px; font-family: var(--font-doc); font-size: 1.05rem; }
+.intro p { margin: 0 0 10px; max-width: 80ch; }
+.intro ol { margin: 0; padding-left: 1.3em; display: grid; gap: 8px; }
+.intro ul { margin: 4px 0 0; padding-left: 1.1em; color: var(--muted); }
+.intro li li { margin: 2px 0; }
+.intro-close { position: absolute; top: 8px; right: 8px; width: 28px; height: 28px; border: 0; border-radius: 6px; background: none; color: var(--muted); font-size: 1.2rem; line-height: 1; cursor: pointer; }
+.intro-close:hover { background: var(--accent-soft); color: var(--fg); }
+
+
+/* Document sheet */
+.sheet { background: var(--paper); border: 1px solid var(--line); border-radius: 4px; padding: 24px clamp(16px, 3.5vw, 40px); }
+.sheet.read { max-width: 820px; margin: 0 auto; }
+.block { display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px 24px; padding-block: 2px; scroll-margin-top: 70px; border-radius: 4px; transition: background-color .6s; }
+.diffmode .block { grid-template-columns: minmax(0, 1fr) 300px; }
+.diffmode .block.has-notes { border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 4px; }
+.block.flash { background: var(--flash); }
+.block.unchanged .doctext { color: var(--muted); }
+.doctext { font-family: var(--font-doc); font-size: 0.97rem; line-height: 1.5; min-width: 0; max-width: 70ch; }
+.ln { margin: 0 0 0.35em; overflow-wrap: anywhere; }
+.k-title { font-size: 1.45rem; font-weight: 700; text-align: center; margin: 0 0 0.1em; text-wrap: balance; line-height: 1.25; }
+.k-subtitle { text-align: center; font-style: italic; color: var(--muted); margin-bottom: 0.9em; }
+.k-h2 { font-size: 1.12rem; font-weight: 700; margin: 0.9em 0 0.35em; text-wrap: balance; }
+.k-h3 { font-size: 1rem; font-weight: 600; margin: 0.7em 0 0.3em; }
+.k-item { padding-left: calc(var(--lv) * 1.75em + 1.9em); text-indent: -1.9em; }
+u { text-decoration-line: underline; text-decoration-thickness: 1px; text-underline-offset: 2px; }
+.k-para { padding-left: calc(var(--lv) * 1.75em); }
+.k-bullet { position: relative; padding-left: calc(var(--lv) * 1.75em + 1.5em); margin-bottom: 0.2em; }
+.k-bullet::before { content: "•"; position: absolute; left: calc(var(--lv) * 1.75em + 0.45em); color: var(--muted); }
+.ln.whole-ins.k-bullet, .ln.whole-del.k-bullet { padding-left: calc(var(--lv) * 1.75em + 1.5em); }
+ins { color: var(--ins); background: var(--ins-bg); text-decoration: none; border-radius: 2px; }
+del { color: var(--del); background: var(--del-bg); text-decoration: line-through; text-decoration-thickness: 1.5px; }
+.ln.whole-ins, .ln.whole-del { border-left: 3px solid; padding-top: 1px; padding-bottom: 1px; }
+.ln.whole-ins { border-color: var(--ins); }
+/* Runs of fully added lines read as one continuous blue block: the line carries the tint,
+   and the space between lines is padding inside the block instead of margin outside it. */
+.ln.whole-ins { background: var(--ins-bg); margin-top: 0; margin-bottom: 0; padding-top: 0.2em; padding-bottom: 0.2em; }
+.ln.whole-ins ins { background: none; }
+.ln.whole-ins.k-h2, .ln.whole-ins.k-h3 { padding-top: 0.6em; }
+.ln.whole-ins + .ln:not(.whole-ins) { margin-top: 0.35em; }
+.ln.whole-ins:has(ins.linked) { background: var(--ins-strong); }
+.ln.whole-ins ins.linked { box-shadow: none; }
+.ln.whole-del { border-color: var(--del); }
+.ln.whole-ins:not(.k-item):not(.k-para):not(.k-bullet), .ln.whole-del:not(.k-item):not(.k-para):not(.k-bullet) { padding-left: 0.6em; }
+.ln.whole-ins.k-item, .ln.whole-del.k-item { padding-left: calc(var(--lv) * 1.75em + 1.9em + 0.6em); }
+.ln.whole-ins.k-para, .ln.whole-del.k-para { padding-left: calc(var(--lv) * 1.75em + 0.6em); }
+.blk-tag { font-family: var(--font-ui); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+.blk-tag.added { color: var(--ins); }
+.blk-tag.removed { color: var(--del); }
+
+/* Notes margin */
+ins.linked { background: var(--ins-strong); box-shadow: 0 0 0 2px var(--ins-strong); border-radius: 2px; }
+del.linked { background: var(--del-strong); box-shadow: 0 0 0 2px var(--del-strong); border-radius: 2px; }
+ins[data-issues], del[data-issues] { transition: background-color .15s, box-shadow .15s; }
+.diffmode .doctext { cursor: default; }
+.note { transition: border-color .15s, box-shadow .15s, background-color .15s; cursor: default; }
+.note.linked { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent); background: var(--accent-soft); }
+.num { display: inline-flex; align-items: center; justify-content: center; min-width: 1.6em; height: 1.6em; padding: 0 0.35em; border-radius: 99px; background: var(--accent-soft); color: var(--accent); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; flex: none; }
+.dec-dot { display: inline-flex; align-items: center; justify-content: center; width: 1.35em; height: 1.35em; border-radius: 99px; background: var(--rec-bg); color: var(--rec); font-size: 0.72rem; font-weight: 700; flex: none; }
+.note-line { display: flex; align-items: flex-start; gap: 8px; }
+.note-line .num { margin-top: 1px; }
+.note { position: relative; }
+/* One shared popup shows the full explanation for whatever is being pointed at. */
+.pop { position: absolute; z-index: 8; width: min(380px, calc(100vw - 32px)); background: var(--paper); color: var(--fg); border: 1px solid var(--line); border-radius: 8px; padding: 10px 14px; box-shadow: 0 8px 28px var(--shadow); font-size: 0.82rem; line-height: 1.45; }
+.pop section + section { border-top: 1px solid var(--line); margin-top: 10px; padding-top: 10px; }
+.pop h4 { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 6px; font-size: 0.86rem; line-height: 1.35; }
+.pop p { margin: 0 0 6px; }
+.pop section > :last-child { margin-bottom: 0; }
+.notes { display: flex; flex-direction: column; gap: 6px; min-width: 0; }
+.note { border: 1px solid var(--line); border-radius: 7px; background: var(--paper); padding: 7px 10px; font-size: 0.8rem; line-height: 1.4; }
+.note-head { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 4px; }
+.note-title { font-weight: 600; line-height: 1.35; }
+.note p { margin: 3px 0; color: var(--fg); }
+.note details { margin-top: 6px; }
+.note summary { cursor: pointer; color: var(--accent); font-weight: 500; font-size: 0.8rem; }
+.id { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 500; color: var(--muted); }
+.decision { margin-top: 8px; padding: 8px 10px; border-radius: 6px; background: var(--rec-bg); color: var(--fg); font-size: 0.82rem; }
+.decision b { color: var(--rec); }
+.cites { list-style: none; margin: 6px 0 0; padding: 0; display: flex; flex-direction: column; gap: 6px; }
+.cites li { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 8px; font-size: 0.8rem; color: var(--muted); }
+.cite-src { font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; color: var(--accent); white-space: nowrap; padding-top: 1px; }
+
+a { color: var(--accent); }
+
+.toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--paper); padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; z-index: 20; max-width: calc(100% - 32px); }
+
+@media (max-width: 900px) {
+  .diffmode .block { grid-template-columns: minmax(0, 1fr); }
+  .sheet { padding: 16px 14px; }
+  .brand .due { display: none; }
+}
+@media (prefers-reduced-motion: reduce) { .block { transition: none; } }
+</style>
+
+<header class="top">
+  <div class="wrap">
+    <div class="bar">
+      <div class="brand">
+        <h1>MITOC Constitution Review</h1>
+      </div>
+      <div class="tabs" role="tablist" aria-label="Document">
+        <button class="tab" role="tab" id="tab-constitution" data-tab="constitution">Constitution</button>
+        <button class="tab" role="tab" id="tab-bylaws" data-tab="bylaws">Bylaws</button>
+      </div>
+      <div class="tools" id="doc-tools">
+        <div class="seg" role="group" aria-label="View">
+          <button id="v-old" data-view="old">Current</button>
+          <button id="v-new" data-view="new">Proposed</button>
+          <button id="v-diff" data-view="diff">Changes</button>
+        </div>
+        <button class="btn" id="dl-md">Export Markdown</button>
+        <button class="btn" id="dl-pdf">Export PDF</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+<div class="wrap intro-wrap" id="intro-wrap">
+  <section class="intro" aria-labelledby="intro-title">
+    <button class="intro-close" id="intro-close" aria-label="Close this explanation">×</button>
+    <h2 id="intro-title">Why is this necessary?</h2>
+    <p>Every year, MITOC's president and treasurer must re-register MITOC with MIT as a student organization. This process requires us to certify that our constitution adheres to MIT's rules. While reviewing our constitution and bylaws after the October BOD meeting, we found a number of important issues. We are therefore proposing the following changes, which are aimed at bringing MITOC into compliance with MIT's rules and fixing internal contradictions while preserving MITOC's customs and procedures to the greatest extent possible.</p>
+    <ol>
+      <li><b>Changes needed to follow MIT's rules:</b>
+        <ul>
+          <li>Added required content: election procedure and quorum, officer terms, officer duties, and a quorum for amendments.</li>
+          <li>Moved quorum and voting rules into the Meetings article, where MIT requires them.</li>
+          <li>Added required statements to the constitution.</li>
+          <li>All Executive Board members (officers) must now be MIT students.</li>
+          <li>Constitution changes take effect once the ASA and SOLE approve them.</li>
+          <li>The bylaws now cover dues waivers, the MIT liability waiver, and keeping funds in MIT accounts.</li>
+        </ul>
+      </li>
+      <li><b>Changes that fix contradictions:</b>
+        <ul>
+          <li>The previous constitution contained contradictory statements about whether Members at-Large must be students. This has been clarified.</li>
+          <li>Membership categories and voting rights now match.</li>
+          <li>Removal rules in the bylaws now follow the constitution.</li>
+          <li>Advisory Board appointments and special meetings are described the same way in both documents.</li>
+        </ul>
+      </li>
+    </ol>
+  </section>
+</div>
+<main class="wrap" id="main"></main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script src="content.js"></script>
+<script>
+(function () {
+  const D = window.MITOC;
+  const ISSUES = Object.fromEntries(D.issues.map(i => [i.id, i]));
+  // Issues are numbered in the order they first appear in the documents.
+  const NUM = {};
+  for (const key of ["constitution", "bylaws"]) for (const b of D.docs[key].blocks) for (const id of b.notes) if (!NUM[id]) NUM[id] = Object.keys(NUM).length + 1;
+  for (const i of D.issues) if (!NUM[i.id]) NUM[i.id] = Object.keys(NUM).length + 1;
+  const state = { tab: "constitution", view: "diff" };
+
+  const hash = location.hash.replace("#", "");
+  if (["constitution", "bylaws"].includes(hash)) state.tab = hash;
+
+  const esc = s => s.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+  // ---------- Line parsing ----------
+  const ITEM_RE = /^([A-Z]|\d+)\.\s/;
+  function parseLines(text) {
+    if (!text) return [];
+    const out = [];
+    let prev = null;
+    for (const raw of text.split("\n")) {
+      if (!raw.trim()) continue;
+      let ln;
+      if (raw.startsWith("# ")) ln = { kind: "title", text: raw.slice(2), lv: 0 };
+      else if (raw.startsWith("## ")) ln = { kind: "h2", text: raw.slice(3), lv: 0 };
+      else if (raw.startsWith("### ")) ln = { kind: "h3", text: raw.slice(4), lv: 0 };
+      else {
+        const lead = raw.length - raw.trimStart().length;
+        const t = raw.trim();
+        const lv = Math.floor(lead / 4);
+        if (prev && prev.kind === "title") ln = { kind: "subtitle", text: t, lv: 0 };
+        else if (t.startsWith("- ")) ln = { kind: "bullet", text: t.slice(2), lv };
+        else ln = { kind: ITEM_RE.test(t) ? "item" : "para", text: t, lv };
+      }
+      out.push(ln);
+      prev = ln;
+    }
+    return out;
+  }
+  const sameLine = (a, b) => a.kind === b.kind && a.lv === b.lv && a.text === b.text;
+
+  // ---------- Diff ----------
+  function lcsTable(a, b, eq) {
+    const n = a.length, m = b.length;
+    const t = Array.from({ length: n + 1 }, () => new Uint16Array(m + 1));
+    for (let i = n - 1; i >= 0; i--)
+      for (let j = m - 1; j >= 0; j--)
+        t[i][j] = eq(a[i], b[j]) ? t[i + 1][j + 1] + 1 : Math.max(t[i + 1][j], t[i][j + 1]);
+    return t;
+  }
+  function seqDiff(a, b, eq) {
+    const t = lcsTable(a, b, eq), ops = [];
+    let i = 0, j = 0;
+    while (i < a.length && j < b.length) {
+      if (eq(a[i], b[j])) { ops.push({ op: "eq", a: a[i], b: b[j] }); i++; j++; }
+      else if (t[i + 1][j] >= t[i][j + 1]) ops.push({ op: "del", a: a[i++] });
+      else ops.push({ op: "ins", b: b[j++] });
+    }
+    while (i < a.length) ops.push({ op: "del", a: a[i++] });
+    while (j < b.length) ops.push({ op: "ins", b: b[j++] });
+    return ops;
+  }
+  // The whole block is diffed as one stream of words, with line breaks as tokens, so a
+  // paragraph that was split, merged, or reworded still lines up with its old text.
+  // Inline markup: __text__ is underlined. Words carry an underline flag through the diff.
+  const plain = t => t.replace(/__/g, "");
+  const inline = t => esc(t).replace(/__(.+?)__/g, "<u>$1</u>");
+  function inlineWords(text) {
+    const out = [];
+    text.split("__").forEach((part, idx) => {
+      const lead = part.match(/^\s+/);
+      if (lead && out.length) out[out.length - 1].t += lead[0];
+      for (const w of part.match(/\S+\s*/g) || []) out.push({ t: w, u: idx % 2 === 1 });
+    });
+    return out;
+  }
+  function tokenize(text) {
+    const lines = parseLines(text), toks = [];
+    lines.forEach((ln, i) => {
+      if (i > 0) toks.push({ br: true, key: "\n", line: i });
+      for (const w of inlineWords(ln.text)) toks.push({ t: w.t, key: w.t.trim(), u: w.u, line: i });
+    });
+    return { lines, toks };
+  }
+  // Fold short runs of matching words that sit inside a larger rewrite into the change, so
+  // stray matches like "of" or "MIT" don't chop a rewritten sentence into alternating pieces.
+  function cleanup(ops) {
+    const isBr = o => (o.a || o.b).br;
+    for (let pass = 0; pass < 6; pass++) {
+      // Runs of matching words, split at line breaks; changes are runs of everything else.
+      const runs = [];
+      for (let i = 0; i < ops.length;) {
+        let j = i + 1;
+        if (ops[i].op === "eq" && isBr(ops[i])) { runs.push({ kind: "br", s: i, e: j }); i = j; continue; }
+        const eq = ops[i].op === "eq";
+        while (j < ops.length && (ops[j].op === "eq") === eq && !(eq && isBr(ops[j]))) j++;
+        runs.push({ kind: eq ? "eq" : "chg", s: i, e: j });
+        i = j;
+      }
+      const size = r => (r && r.kind === "chg" ? r.e - r.s : 0);
+      const crossesLine = r => r && r.kind === "chg" && ops.slice(r.s, r.e).some(isBr);
+      let changed = false;
+      const out = [];
+      runs.forEach((r, k) => {
+        const seg = ops.slice(r.s, r.e);
+        if (r.kind === "eq") {
+          const prev = runs[k - 1], next = runs[k + 1], n = seg.length;
+          const between = size(prev) && size(next) && (n <= 2 || (n <= 6 && n * 3 < size(prev) + size(next)));
+          // A word or two left at the edge of a line whose change spills into the next line.
+          const edge = n <= 2 && ((crossesLine(next) && (!prev || prev.kind === "br")) || (crossesLine(prev) && (!next || next.kind === "br")));
+          if (between || edge) {
+            changed = true;
+            for (const o of seg) out.push({ op: "del", a: o.a });
+            for (const o of seg) out.push({ op: "ins", b: o.b });
+            return;
+          }
+        }
+        out.push(...seg);
+      });
+      // Within each changed region show the deleted words first, then the inserted ones.
+      ops = [];
+      for (let i = 0; i < out.length;) {
+        if (out[i].op === "eq") { ops.push(out[i++]); continue; }
+        let j = i; while (j < out.length && out[j].op !== "eq") j++;
+        const reg = out.slice(i, j);
+        ops.push(...reg.filter(o => o.op === "del"), ...reg.filter(o => o.op === "ins"));
+        i = j;
+      }
+      if (!changed) break;
+    }
+    return ops;
+  }
+  // Returns the redline for one block plus its changes ("hunks"): each run of deleted and
+  // inserted words on one displayed line. `resolve(hunk)` names the issues behind a hunk.
+  function blockDiff(oldText, newText, resolve = () => [], whole = false) {
+    if (whole) return wholeDiff(oldText, newText, resolve);
+    const A = tokenize(oldText), B = tokenize(newText);
+    const ops = cleanup(seqDiff(A.toks, B.toks, (p, q) => p.key === q.key));
+    let region = -1;
+    ops.forEach((o, i) => { if (o.op !== "eq" && (i === 0 || ops[i - 1].op === "eq")) region++; o.r = region; });
+    // An old line whose every word was deleted is shown as its own struck-out line.
+    const wholeDel = A.lines.map((_, L) => {
+      const own = ops.filter(o => o.op === "del" && !o.a.br && o.a.line === L).length;
+      return own > 0 && own === A.toks.filter(t => !t.br && t.line === L).length;
+    });
+    // Deleted words go to the new line that keeps the rest of their old line, when there is one.
+    const home = {};
+    for (const o of ops) if (o.op === "eq" && !o.a.br && home[o.a.line] == null) home[o.a.line] = o.b.line;
+    const rows = [], segs = new Map(), emitted = new Set(), later = new Map(), hunks = new Map();
+    let cur = null, pending = [];
+    const hunk = (key, k, t) => {
+      if (!hunks.has(key)) hunks.set(key, { key, del: "", ins: "" });
+      hunks.get(key)[k] += t;
+    };
+    const add = (L, k, t, r, u) => {
+      const s = segs.get(L), last = s[s.length - 1];
+      const key = k === "eq" ? null : `${r}@n${L}`;
+      if (key) hunk(key, k, t);
+      if (last && last.k === k && last.key === key && last.u === !!u) last.t += t; else s.push({ k, t, key, u: !!u });
+    };
+    for (const o of ops) {
+      if (o.op === "del") {
+        const tok = o.a;
+        if (tok.br) continue;
+        if (wholeDel[tok.line]) {
+          if (!emitted.has(tok.line)) {
+            emitted.add(tok.line);
+            const key = `${o.r}@o${tok.line}`;
+            hunk(key, "del", plain(A.lines[tok.line].text));
+            rows.push({ old: tok.line, key }); cur = null;
+          }
+          continue;
+        }
+        const h = home[tok.line], item = { t: tok.t, r: o.r, u: tok.u };
+        if (h != null && h > (cur ?? -1) && !segs.has(h)) { if (!later.has(h)) later.set(h, []); later.get(h).push(item); }
+        else if (cur == null) pending.push(item); else add(cur, "del", tok.t, o.r, tok.u);
+        continue;
+      }
+      const tok = o.b;
+      if (tok.br) { cur = null; continue; }
+      if (!segs.has(tok.line)) {
+        segs.set(tok.line, []); rows.push({ nw: tok.line });
+        for (const d of [...pending, ...(later.get(tok.line) || [])]) add(tok.line, "del", d.t, d.r, d.u);
+        pending = [];
+      }
+      cur = tok.line;
+      add(cur, o.op === "eq" ? "eq" : "ins", tok.t, o.r, tok.u);
+    }
+    if (pending.length && cur != null) for (const d of pending) add(cur, "del", d.t, d.r, d.u);
+    for (const h of hunks.values()) h.issues = resolve(h);
+    // Adjacent fully deleted or fully inserted lines act as one change: one highlight, and
+    // the notes of every line in the run.
+    const alias = new Map();
+    const wholeKeys = r => r.old != null ? [r.key]
+      : segs.get(r.nw).every(x => x.k === "ins") ? [...new Set(segs.get(r.nw).map(x => x.key))] : null;
+    let run = [];
+    const closeRun = () => {
+      if (run.length > 1) {
+        const keys = [...new Set(run.flat())], head = hunks.get(keys[0]);
+        head.issues = [...new Set(keys.flatMap(k => hunks.get(k).issues))];
+        for (const k of keys.slice(1)) {
+          const h = hunks.get(k);
+          head.del += " " + h.del; head.ins += " " + h.ins;
+          alias.set(k, keys[0]); hunks.delete(k);
+        }
+      }
+      run = [];
+    };
+    for (const r of rows) { const k = wholeKeys(r); if (k) run.push(k); else closeRun(); }
+    closeRun();
+    const attr = key => { key = alias.get(key) || key; const h = hunks.get(key); return ` data-h="${key}" data-issues="${h.issues.join(" ")}"`; };
+    const html = rows.map(r => {
+      if (r.old != null) { const ln = A.lines[r.old]; return `<div ${lineAttrs(ln, " whole-del")}><del${attr(r.key)}>${inline(ln.text)}</del></div>`; }
+      const s = segs.get(r.nw), whole = s.every(x => x.k === "ins");
+      const inner = s.map((x, i) => {
+        const body = esc(x.t.replace(/\s+$/, "")), text = x.u ? `<u>${body}</u>` : body;
+        if (x.k === "eq") return text + (/\s$/.test(x.t) ? " " : "");
+        const gap = /\s$/.test(x.t) || (x.k === "del" && s[i + 1] && s[i + 1].k === "ins") ? " " : "";
+        return `<${x.k}${attr(x.key)}>${text}</${x.k}>${gap}`;
+      }).join("");
+      return `<div ${lineAttrs(B.lines[r.nw], whole ? " whole-ins" : "")}>${inner}</div>`;
+    }).join("");
+    return { html, hunks: [...hunks.values()] };
+  }
+  // A rewrite shown as one replacement: shared opening lines stay plain, then every old line
+  // is struck out and every new line follows as one inserted block, all a single change.
+  function wholeDiff(oldText, newText, resolve) {
+    const A = parseLines(oldText), B = parseLines(newText);
+    let k = 0;
+    while (k < A.length && k < B.length && sameLine(A[k], B[k])) k++;
+    const h = { key: "w", del: A.slice(k).map(l => plain(l.text)).join(" "), ins: B.slice(k).map(l => plain(l.text)).join(" ") };
+    h.issues = resolve(h);
+    const attr = ` data-h="w" data-issues="${h.issues.join(" ")}"`;
+    const html = A.slice(0, k).map(renderLine).join("")
+      + A.slice(k).map(l => `<div ${lineAttrs(l, " whole-del")}><del${attr}>${inline(l.text)}</del></div>`).join("")
+      + B.slice(k).map(l => `<div ${lineAttrs(l, " whole-ins")}><ins${attr}>${inline(l.text)}</ins></div>`).join("");
+    return { html, hunks: [h] };
+  }
+  // A block with one note links every change to it. A block with several notes lists, per
+  // issue, snippets of the deleted or inserted text it explains; `rest` takes anything left.
+  function hunkResolver(b) {
+    const norm = t => t.replace(/\s+/g, " ").trim();
+    // Renumbering ("C." to "D.") is a mechanical tweak, not an edit with a reason.
+    const unlabel = t => norm(norm(t).replace(/(^|\s)([A-Z]|\d+)\.(?=\s|$)/g, "$1"));
+    return h => {
+      if (unlabel(h.del) === unlabel(h.ins)) return [];
+      if (b.notes.length <= 1) return b.notes.slice();
+      const del = norm(h.del), ins = norm(h.ins);
+      const hit = Object.entries(b.links || {}).filter(([, snips]) => snips.some(sn => sn.startsWith("=") ? del === sn.slice(1) || ins === sn.slice(1) : (del && del.includes(sn)) || (ins && ins.includes(sn)))).map(([id]) => id);
+      // A "-" entry marks edits that deliberately carry no note.
+      if (hit.includes("-")) return [];
+      if (hit.length) return hit;
+      return b.rest ? [].concat(b.rest) : b.notes.slice();
+    };
+  }
+
+  // ---------- Rendering ----------
+  const lineAttrs = (ln, extra = "") => `class="ln k-${ln.kind}${extra}" style="--lv:${ln.lv}"`;
+  const renderLine = ln => `<div ${lineAttrs(ln)}>${inline(ln.text)}</div>`;
+  const renderText = text => parseLines(text).map(renderLine).join("");
+
+  function citesHtml(cites) {
+    if (!cites.length) return "";
+    return `<ul class="cites">${cites.map(c => `<li><span class="cite-src">${c.src} p.&nbsp;${esc(c.page)}</span><span>${esc(c.text)}</span></li>`).join("")}</ul>`;
+  }
+  // Issue ids in prose ("see N5") are shown as their display numbers.
+  const prose = t => esc(t).replace(/\b([RN]\d{1,2})\b/g, m => (NUM[m] ? "#" + NUM[m] : m));
+  const num = i => `<span class="num">${NUM[i.id]}</span>`;
+  function detailHtml(i) {
+    return `${i.problem ? `<p>${prose(i.problem)}</p>` : ""}
+      ${i.fix ? `<p><b>Change:</b> ${prose(i.fix)}</p>` : ""}
+      ${i.decision ? `<div class="decision"><b>Decide:</b> ${prose(i.decision)}</div>` : ""}
+      ${citesHtml(i.cites)}`;
+  }
+  function noteCard(id) {
+    const i = ISSUES[id];
+    return `<div class="note" data-issue="${i.id}" tabindex="0">
+      <div class="note-line">${num(i)}<span class="note-title">${esc(i.title)}</span>${i.decision ? `<span class="dec-dot" title="Needs a decision">?</span>` : ""}</div>
+    </div>`;
+  }
+
+  // Label each block with its nearest article and section so issues can link to it.
+  function blockLabels(doc) {
+    const labels = {};
+    let art = "", sec = "";
+    for (const b of doc.blocks) {
+      for (const ln of parseLines(b.new || b.old)) {
+        if (ln.kind === "h2") { art = ln.text.split(" - ")[0]; sec = ""; }
+        if (ln.kind === "h3") sec = ln.text.split(":")[0];
+      }
+      labels[b.id] = b.id.endsWith("title") ? "Header" : [art, sec].filter(Boolean).join(", ");
+    }
+    return labels;
+  }
+  const LABELS = { constitution: blockLabels(D.docs.constitution), bylaws: blockLabels(D.docs.bylaws) };
+
+  function renderDoc(key) {
+    const doc = D.docs[key];
+    const v = state.view;
+    let html = "";
+    html += `<article class="sheet ${v === "diff" ? "diffmode" : "read"}">`;
+    for (const b of doc.blocks) {
+      const changed = b.old !== b.new;
+      if (v === "old" && b.old == null) continue;
+      if (v === "new" && b.new == null) continue;
+      if (v === "old") { html += `<section class="block" id="blk-${b.id}"><div class="doctext">${renderText(b.old)}</div></section>`; continue; }
+      if (v === "new") { html += `<section class="block" id="blk-${b.id}"><div class="doctext">${renderText(b.new)}</div></section>`; continue; }
+      const notes = changed ? b.notes : [];
+      let tag = "";
+      if (b.old == null) tag = `<div class="blk-tag added">New text</div>`;
+      else if (b.new == null) tag = `<div class="blk-tag removed">Removed${b.id === "c-art4-s5" ? ", moved to Article V, Section D" : ""}</div>`;
+      html += `<section class="block${changed ? "" : " unchanged"}${notes.length ? " has-notes" : ""}" id="blk-${b.id}" data-issues="${notes.join(" ")}">
+        <div class="doctext">${tag}${changed ? blockDiff(b.old, b.new, hunkResolver(b), b.whole).html : renderText(b.new)}</div>
+        <aside class="notes">${notes.map(noteCard).join("")}</aside>
+      </section>`;
+    }
+    html += `</article>`;
+    return html;
+  }
+
+  // ---------- Export ----------
+  function toMarkdown(key) {
+    const out = [];
+    const u = t => t.replace(/__(.+?)__/g, "<u>$1</u>");
+    for (const b of D.docs[key].blocks) {
+      if (b.new == null) continue;
+      for (const ln of parseLines(b.new)) {
+        const isNested = (ln.kind === "item" && ln.lv > 0) || ln.kind === "bullet";
+        if (!isNested && out.length && /^\s*- /.test(out[out.length - 1])) out.push("");
+        if (ln.kind === "title") out.push(`# ${ln.text}`);
+        else if (ln.kind === "subtitle") out.push(`*${ln.text}*`);
+        else if (ln.kind === "h2") out.push(`## ${ln.text}`);
+        else if (ln.kind === "h3") out.push(`### ${ln.text}`);
+        else if (ln.kind === "bullet") { out.push("  ".repeat(ln.lv) + "- " + u(ln.text)); continue; }
+        else if (ln.kind === "item") {
+          const m = ln.text.match(ITEM_RE);
+          const body = `**${m[1]}.** ${u(ln.text.slice(m[0].length))}`;
+          if (ln.lv === 0) out.push(body);
+          else { out.push("  ".repeat(ln.lv - 1) + "- " + body); continue; }
+        } else out.push(u(ln.text));
+        out.push("");
+      }
+      if (out.length && out[out.length - 1] !== "") out.push("");
+    }
+    return out.join("\n").replace(/\n{3,}/g, "\n\n").trim() + "\n";
+  }
+
+  function toPdf(key) {
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({ unit: "pt", format: "letter" });
+    const W = pdf.internal.pageSize.getWidth(), H = pdf.internal.pageSize.getHeight();
+    const M = 72, width = W - 2 * M, IND = 20;
+    let y = M;
+    const ensure = h => { if (y + h > H - M) { pdf.addPage(); y = M; } };
+    const set = (style, size) => { pdf.setFont("times", style); pdf.setFontSize(size); };
+    const write = (lines, x, lead) => { for (const l of lines) { ensure(lead); pdf.text(l, x, y); y += lead; } };
+    // Wraps text with __underline__ markup and draws the underlines under each wrapped line.
+    const writeRich = (text, x, w, lead) => {
+      const ranges = []; let flat = "";
+      text.split("__").forEach((part, i) => { if (i % 2) ranges.push([flat.length, flat.length + part.length]); flat += part; });
+      let cursor = 0;
+      for (const l of pdf.splitTextToSize(flat, w)) {
+        ensure(lead); pdf.text(l, x, y);
+        const start = flat.indexOf(l, cursor);
+        if (start >= 0) {
+          for (const [rs, re] of ranges) {
+            const a = Math.max(rs, start), b = Math.min(re, start + l.length);
+            if (a < b) { const x1 = x + pdf.getTextWidth(flat.slice(start, a)); pdf.setLineWidth(0.6); pdf.line(x1, y + 1.8, x1 + pdf.getTextWidth(flat.slice(a, b)), y + 1.8); }
+          }
+          cursor = start + l.length;
+        }
+        y += lead;
+      }
+    };
+    for (const b of D.docs[key].blocks) {
+      if (b.new == null) continue;
+      for (const ln of parseLines(b.new)) {
+        if (ln.kind === "title") { set("bold", 18); pdf.text(ln.text, W / 2, y + 6, { align: "center" }); y += 26; }
+        else if (ln.kind === "subtitle") { set("italic", 11); pdf.text(ln.text, W / 2, y, { align: "center" }); y += 30; }
+        else if (ln.kind === "h2") { y += 10; set("bold", 13); ensure(40); write(pdf.splitTextToSize(ln.text, width), M, 17); y += 4; }
+        else if (ln.kind === "h3") { y += 4; set("bold", 11.5); ensure(34); write(pdf.splitTextToSize(ln.text, width), M, 15); y += 2; }
+        else if (ln.kind === "item") {
+          set("normal", 11);
+          const m = ln.text.match(ITEM_RE);
+          const x = M + ln.lv * IND, labelW = Math.max(pdf.getTextWidth(m[0]), 16);
+          ensure(15);
+          pdf.text(m[1] + ".", x, y);
+          writeRich(ln.text.slice(m[0].length), x + labelW, width - ln.lv * IND - labelW, 15);
+          y += 4;
+        } else if (ln.kind === "bullet") {
+          set("normal", 11);
+          const x = M + ln.lv * IND + 8;
+          ensure(15);
+          pdf.text("\u2022", x, y);
+          writeRich(ln.text, x + 14, width - ln.lv * IND - 22, 15);
+          y += 2;
+        } else {
+          set("normal", 11);
+          writeRich(ln.text, M + ln.lv * IND, width - ln.lv * IND, 15);
+          y += 7;
+        }
+      }
+    }
+    const n = pdf.getNumberOfPages();
+    const title = `MIT Outing Club ${D.docs[key].name}, proposed draft`;
+    for (let p = 1; p <= n; p++) {
+      pdf.setPage(p); set("normal", 9); pdf.setTextColor(110);
+      pdf.text(title, M, H - 40);
+      pdf.text(`Page ${p} of ${n}`, W - M, H - 40, { align: "right" });
+      pdf.setTextColor(0);
+    }
+    return pdf.output("blob");
+  }
+
+  let toastTimer;
+  function toast(msg) {
+    let t = document.querySelector(".toast");
+    if (!t) { t = document.createElement("div"); t.className = "toast"; t.setAttribute("role", "status"); document.body.appendChild(t); }
+    t.textContent = msg; t.hidden = false;
+    clearTimeout(toastTimer); toastTimer = setTimeout(() => { t.hidden = true; }, 3200);
+  }
+  let downloadsPromise = null;
+  function getDownloads() {
+    if (!(window.claude && typeof window.claude.use === "function")) return Promise.resolve(null);
+    if (!downloadsPromise) downloadsPromise = window.claude.use("downloads").catch(() => null);
+    return downloadsPromise;
+  }
+  async function saveFile(filename, data, type) {
+    const dl = await getDownloads();
+    if (dl) {
+      try { await dl.save({ filename, data }); toast(`Saved ${filename}`); }
+      catch (e) {
+        if (e && e.code === "declined") toast("Download cancelled");
+        else if (e && e.code === "rate_limited") toast("A download prompt is already open. Try again in a moment.");
+        else toast("Downloads aren't available in this view. Open the page in a browser tab to export.");
+      }
+      return;
+    }
+    // Opened as a local file or another host: a normal browser download works there.
+    const blob = data instanceof Blob ? data : new Blob([data], { type });
+    const a = document.createElement("a");
+    a.href = URL.createObjectURL(blob); a.download = filename;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 4000);
+    toast(`Saved ${filename}`);
+  }
+
+  // ---------- Wiring ----------
+  const main = document.getElementById("main");
+  function render() {
+    for (const t of document.querySelectorAll(".tab")) t.setAttribute("aria-selected", String(t.dataset.tab === state.tab));
+    for (const b of document.querySelectorAll("[data-view]")) b.setAttribute("aria-pressed", String(b.dataset.view === state.view));
+    hidePop();
+    main.innerHTML = renderDoc(state.tab);
+    linkKey = "";
+  }
+
+  document.querySelector(".tabs").addEventListener("click", e => {
+    const t = e.target.closest("[data-tab]"); if (!t) return;
+    state.tab = t.dataset.tab;
+    try { history.replaceState(null, "", "#" + state.tab); } catch (err) {}
+    render(); window.scrollTo(0, 0);
+  });
+  document.querySelector(".seg[aria-label=View]").addEventListener("click", e => {
+    const b = e.target.closest("[data-view]"); if (!b) return;
+    state.view = b.dataset.view; render();
+  });
+  // Link each change to its notes: pointing at a change highlights it and the notes that
+  // explain it; pointing at a note highlights every change it explains, in any section.
+  let linkKey = "";
+  function setLink(issue, change) {
+    const key = issue ? "i:" + issue : change ? "c:" + change.closest(".block").id + change.dataset.h : "";
+    if (key === linkKey) return;
+    linkKey = key;
+    for (const el of main.querySelectorAll(".linked")) el.classList.remove("linked");
+    if (issue) {
+      for (const c of main.querySelectorAll("ins[data-issues], del[data-issues]")) if (c.dataset.issues.split(" ").includes(issue)) c.classList.add("linked");
+      for (const n of main.querySelectorAll(`.note[data-issue="${issue}"]`)) n.classList.add("linked");
+    } else if (change) {
+      const block = change.closest(".block"), ids = change.dataset.issues.split(" ").filter(Boolean);
+      for (const c of block.querySelectorAll(`[data-h="${change.dataset.h}"]`)) c.classList.add("linked");
+      for (const n of block.querySelectorAll(".note")) if (ids.includes(n.dataset.issue)) n.classList.add("linked");
+    }
+  }
+
+  // The popup opens beside the note (or below it on narrow screens). It stays open while the
+  // pointer is on the edit, the note, or the popup itself; short gaps between words don't
+  // close it, and moving to a different edit switches only after a brief pause.
+  const pop = document.createElement("div");
+  pop.className = "pop"; pop.hidden = true; pop.setAttribute("role", "tooltip");
+  document.body.appendChild(pop);
+  let popKey = "", hideTimer = 0, switchTimer = 0;
+  function placePop(anchor) {
+    const r = anchor.getBoundingClientRect();
+    if (innerWidth < 900) {
+      pop.style.width = r.width + "px";
+      pop.style.left = r.left + scrollX + "px";
+      pop.style.top = r.bottom + scrollY + 6 + "px";
+      return;
+    }
+    pop.style.width = "";
+    const w = pop.offsetWidth, h = pop.offsetHeight;
+    pop.style.left = Math.max(scrollX + 8, r.left + scrollX - w - 12) + "px";
+    pop.style.top = Math.max(scrollY + 56, Math.min(r.top + scrollY - 6, scrollY + innerHeight - h - 8)) + "px";
+  }
+  function showPop(ids, anchor, key) {
+    clearTimeout(hideTimer); clearTimeout(switchTimer);
+    if (key === popKey && !pop.hidden) return;
+    popKey = key;
+    pop.innerHTML = ids.slice().sort((a, b) => NUM[a] - NUM[b]).map(id => {
+      const i = ISSUES[id];
+      return `<section><h4>${num(i)}<span>${esc(i.title)}</span></h4>${detailHtml(i)}</section>`;
+    }).join("");
+    pop.hidden = false;
+    placePop(anchor);
+  }
+  function hidePop() {
+    clearTimeout(hideTimer); clearTimeout(switchTimer);
+    pop.hidden = true; popKey = "";
+    setLink(null, null);
+  }
+  function scheduleHide() {
+    clearTimeout(switchTimer); clearTimeout(hideTimer);
+    hideTimer = setTimeout(hidePop, 250);
+  }
+  function pointAt(target) {
+    if (!target || !target.closest) return;
+    if (pop.contains(target)) { clearTimeout(hideTimer); clearTimeout(switchTimer); return; }
+    if (state.view !== "diff") return scheduleHide();
+    let req = null;
+    const note = target.closest(".note[data-issue]");
+    if (note) {
+      req = { ids: [note.dataset.issue], anchor: note, key: "n:" + note.closest(".block").id + note.dataset.issue, link: () => setLink(note.dataset.issue, null) };
+    } else {
+      const ch = target.closest("ins[data-issues], del[data-issues]");
+      if (ch && ch.dataset.issues) {
+        const block = ch.closest(".block"), ids = ch.dataset.issues.split(" ").filter(Boolean);
+        const anchor = [...block.querySelectorAll(".note")].find(n => ids.includes(n.dataset.issue)) || ch;
+        req = { ids, anchor, key: "c:" + block.id + ch.dataset.h, link: () => setLink(null, ch) };
+      }
+    }
+    if (!req) return scheduleHide();
+    const go = () => { req.link(); showPop(req.ids, req.anchor, req.key); };
+    clearTimeout(hideTimer); clearTimeout(switchTimer);
+    if (pop.hidden || req.key === popKey) go();
+    else switchTimer = setTimeout(go, 150);
+  }
+  document.addEventListener("mouseover", e => pointAt(e.target));
+  document.addEventListener("focusin", e => pointAt(e.target));
+  document.addEventListener("keydown", e => { if (e.key === "Escape") hidePop(); });
+  addEventListener("resize", () => hidePop());
+  document.getElementById("intro-close").addEventListener("click", () => { document.getElementById("intro-wrap").hidden = true; });
+  const docKey = () => state.tab;
+  document.getElementById("dl-md").addEventListener("click", () => {
+    const k = docKey(); saveFile(D.docs[k].file + ".md", toMarkdown(k), "text/markdown");
+  });
+  document.getElementById("dl-pdf").addEventListener("click", () => {
+    const k = docKey();
+    if (!window.jspdf) { toast("The PDF library didn't load. Check your connection and reload."); return; }
+    saveFile(D.docs[k].file + ".pdf", toPdf(k), "application/pdf");
+  });
+
+  render();
+})();
+</script>
