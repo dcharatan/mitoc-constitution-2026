@@ -423,11 +423,12 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
           new: `A. Elections
     1. Elections for the Executive Board shall be held each year at a general meeting in April. The date of the election meeting shall be announced to the general membership at least two weeks in advance.
     2. The quorum for an election to the Executive Board, including the annual election and any election to fill an Executive Board vacancy, is at least 10 MIT students who are members of the general membership.
-    3. The President shall moderate elections and solicit nominations in advance. If the President is a candidate for a position, the Executive Board shall designate another moderator for the election to that position only, and the President moderates the remaining elections. A moderator does not vote in the elections they moderate. Any member may nominate any eligible candidate, including themselves, and nominees must accept their nomination.
-    4. Only MIT students may be candidates for Executive Board positions.
-    5. All members of the general membership may vote. The moderator decides how votes are cast and counted, using anonymous voting where possible.
-    6. For single-seat Executive Board positions, a candidate needs the votes of a majority of the members present; if no candidate has a majority, a runoff is held between the top two.
-    7. For member at-large, each member who is not a candidate for member at-large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.`
+    3. The President shall solicit nominations in advance of the election meeting. Any member may nominate any eligible candidate, including themselves, and nominees must accept their nomination.
+    4. The President shall moderate the elections. For any position the President is a candidate for, the Executive Board shall designate another moderator for that election only. A moderator does not vote in the elections they moderate.
+    5. Only MIT students may be candidates for Executive Board positions.
+    6. All members of the general membership may vote. The moderator decides how votes are cast and counted, using anonymous voting where possible.
+    7. For single-seat Executive Board positions, a candidate needs the votes of a majority of the members present; if no candidate has a majority, a runoff is held between the top two.
+    8. For member at-large, each member who is not a candidate for member at-large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.`
         },
         {
           id: "c-art4-s3-terms", notes: ["R7"], whole: true,
@@ -440,13 +441,13 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
     5. The outgoing and incoming officers shall transition in an orderly fashion to avoid disruption to the organization. Outgoing officers shall pass on relevant information, documents, and account access to their successors.`
         },
         {
-          id: "c-art4-s3-appointments", notes: ["R4", "R14"], links: {"R14": ["Newly elected officers assume their roles at the conclusion of the annual elections"], "R4": ["Advisory Board members are appointed"]}, rest: "R14",
+          id: "c-art4-s3-appointments", notes: ["R4", "R14"], links: {"R14": ["Newly elected officers assume their roles at the conclusion of the annual elections"], "R4": ["Advisory Board members and", "Except for the Mediation Chairs"]}, rest: "R14",
           old: `B. Appointments
     1. Committee chairpersons shall be appointed by the Executive Board in accordance with the Bylaws.
     2. Newly elected officers assume their roles at the conclusion of the annual elections in the spring.`,
           new: `C. Appointments
-    1. Committee chairpersons shall be appointed by the Executive Board in accordance with the Bylaws.
-    2. Advisory Board members and committee chairpersons are appointed by the Executive Board. Except for the Mediation Chairs and the Safety Committees, the Executive Board may instead fill a position by election at the annual election meeting or at another general meeting. Such an election requires only the Executive Board quorum set out in Article V, Section D.1.`
+    1. Advisory Board members and committee chairpersons shall be appointed by the Executive Board in accordance with the Bylaws.
+    2. Except for the Mediation Chairs and the Safety Committees, the Executive Board may instead fill a position by election at the annual election meeting or at another general meeting, subject to the quorum for that meeting set out in Article V, Section D.`
         },
         {
           id: "c-art4-s3-vacancies", notes: ["R13"],
@@ -455,8 +456,8 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
     2. Vacancies in the position of Vice President, Treasurer, Bursar, member at-large, or a position on the Advisory Board shall be filled by an appointment by the Executive Board, in accordance with the Constitution and Bylaws, to be approved by the general membership at the next meeting.
     3. Vacancies in a committee chairpersonship shall be filled by appointment of the Executive Board.`,
           new: `D. Vacancies
-    1. If the President or Treasurer position becomes vacant, the Vice President or the Bursar, respectively, shall become President or Treasurer for the remainder of the term.
-    2. Any other vacant Executive Board position, including a Vice President or Bursar position left vacant under item 1, shall be filled by election at the next general meeting.
+    1. If the President or Treasurer position becomes vacant, the Vice President or the Bursar, respectively, shall serve as interim President or Treasurer, in addition to their own office, until the position is filled under item 2, so that these offices are never vacant.
+    2. Any vacant Executive Board position shall be filled by election at the next general meeting.
     3. The President or Treasurer shall update the Engage officer roster promptly after any change in officers.`
         },
         {
@@ -493,7 +494,7 @@ C. Meetings shall be presided over by the President unless they are absent, and 
 D. Quorum and decisions
     1. A quorum for general meetings shall consist of a majority of the Executive Board in attendance.
     2. For in-person votes, once a quorum is established, a simple majority of the Executive Board present is required for a decision.
-    3. For asynchronous email votes, a simple majority of Executive Board members who actively participate (i.e., do not abstain) is required for a decision. Upon receiving a call to votes, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
+    3. For asynchronous email votes, a simple majority of Executive Board members who actively participate (i.e., do not abstain) is required for a decision. Upon receiving a call to vote, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
     4. Executive Board elections and amendment votes require the quorum set out in Article IV, Section 3.A.2. All other elections require only the quorum in item 1.`
         },
         {
