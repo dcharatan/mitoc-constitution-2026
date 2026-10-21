@@ -79,14 +79,14 @@ Participation in MITOC shall consist of the following:
 - <u>MIT Student Members</u>: MIT students, as defined in Article III of the Constitution, who join MITOC.
 - <u>MIT Community Members</u>: individuals who are not MIT students, who are current MIT faculty, staff, fellows, employees, or affiliates, hold MIT visitor appointments, or have a current Kerberos account, and who join MITOC.
 - <u>MITOC Guests</u>: non-members who take part in MITOC trips, gear rentals, or events.
-- <u>Active Members</u>: MIT Student Members, MIT Community Members, and MITOC Guests who meet the participation requirements in Section 3.
+- <u>Participating Members</u>: MIT Student Members, MIT Community Members, and MITOC Guests who meet the participation requirements in Section 3.
 
-MIT Student Members, MIT Community Members, and Active Members make up the general membership. These categories shall be defined in the following sections, and individuals in each category shall pay dues to MITOC. MITOC shall waive dues for any MIT Student Member who cannot afford them.
+MIT Student Members, MIT Community Members, and Participating Members make up the general membership. These categories shall be defined in the following sections, and individuals in each category shall pay dues to MITOC. MITOC shall waive dues for any MIT Student Member who cannot afford them.
 
 For MIT’s student organization records, including MITOC’s Engage rosters, each person is reported under the category defined in the MIT Student Organization Handbook that matches their involvement:
 
-- MIT Student Members, and Active Members who are MIT students, are Members if they regularly participate in MITOC’s meetings or organizational operations, and Attendees otherwise.
-- MIT Community Members, MITOC Guests, and other Active Members are Participants if they regularly participate in MITOC’s meetings or organizational operations, Student Organization Advisors if they provide guidance, support, and perspective to MITOC, and Attendees otherwise. A MITOC Guest who is an MIT student is reported as an MIT Student Member would be.
+- MIT Student Members, and Participating Members who are MIT students, are Members if they regularly participate in MITOC’s meetings or organizational operations, and Attendees otherwise.
+- MIT Community Members, MITOC Guests, and other Participating Members are Participants if they regularly participate in MITOC’s meetings or organizational operations, Student Organization Advisors if they provide guidance, support, and perspective to MITOC, and Attendees otherwise. A MITOC Guest who is an MIT student is reported as an MIT Student Member would be.
 
 All members must complete and sign the MIT General Liability Waiver for Student Organizations before participating in MITOC activities.
 
@@ -100,7 +100,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 
 - **1.** Serve in the positions of President, Vice President, Treasurer, Bursar or Member at-Large,
 - **2.** Vote in elections and on amendments at general meetings,
-- **3.** Act in any of the ways privileged to MIT Community Members, Active Members, or MITOC Guests.
+- **3.** Act in any of the ways privileged to MIT Community Members, Participating Members, or MITOC Guests.
 
 ### Section 2: MIT Community Members
 
@@ -111,32 +111,31 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 **B.** MIT Community Members shall be privileged to do the following in MITOC:
 
 - **1.** Vote in elections and on amendments at general meetings, subject to the quorum requirements of the Constitution,
-- **2.** Act in any of the ways privileged to Active Members or MITOC Guests.
+- **2.** Act in any of the ways privileged to Participating Members or MITOC Guests.
 
 **C.** Limitations:
 
 - **1.** MIT Community Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
 - **2.** MIT Community Members may not serve on the Executive Board.
 
-### Section 3: Active Members
+### Section 3: Participating Members
 
-**A.** An MIT Student Member, MIT Community Member, or MITOC Guest becomes an Active Member when they meet the following requirements:
+**A.** An MIT Student Member, MIT Community Member, or MITOC Guest becomes a Participating Member when they meet the following requirements:
 
 - **1.** They must be in good standing with MIT and the MITOC Executive Board.
 - **2.** They must have participated (as a leader or participant) in greater than or equal to 2 trips within the past year.
 
-**B.** Active Members shall be privileged to do the following in MITOC:
+**B.** Participating Members shall be privileged to do the following in MITOC:
 
 - **1.** Serve as MITOC trip leaders, once approved under Article III,
 - **2.** Vote in Executive Board elections, with the endorsement of the Executive Board,
 - **3.** Serve on the Advisory Board,
 - **4.** Serve on MITOC committees,
-- **5.** Receive MITOC discounts,
-- **6.** Act in any of the ways privileged to MITOC Guests.
+- **5.** Act in any of the ways privileged to MITOC Guests.
 
 **C.** Limitations:
 
-- **1.** Active Members who are not MIT Student Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
+- **1.** Participating Members who are not MIT Student Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
 
 ### Section 4: MITOC Guests
 
@@ -153,7 +152,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 **C.** Limitations:
 
 - **1.** MITOC Guests shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
-- **2.** MITOC Guests who are not Active Members may not vote in elections or on amendments.
+- **2.** MITOC Guests who are not Participating Members may not vote in elections or on amendments.
 
 ## Article III - Committees
 
@@ -167,8 +166,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 - **2.** Approve and rate trip leaders, which they may delegate to activity chairs where applicable,
 - **3.** Review and approve of trip itineraries,
 - **4.** Investigate and report on incidents that take place during MITOC activities,
-- **5.** Issue safety standards for MITOC activities,
-- **6.** Ensure that MITOC trips comply with MIT travel policies, including registering trips with SOLE where the MIT Student Organization Handbook requires it.
+- **5.** Issue safety standards for MITOC activities.
 
 ### Section 2: Committee Formation
 
@@ -194,13 +192,13 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 
 **C.** All other spending must be approved by a vote of the Executive Board and recorded in the budget. The Treasurer shall not reimburse spending that has not been approved or that exceeds the budget.
 
-**D.** All MITOC funds are Institute funds. All revenue, including dues and fees, shall be deposited into MITOC’s MIT accounts, and MITOC shall not collect funds through external platforms such as Venmo, PayPal, or GoFundMe.
-
 ## Article VI - Elections
 
-**A.** All elected positions must be up for reelection by the general membership at the annual election meeting in April, held in accordance with Article IV, Section 3 of the Constitution.
+**A.** All Executive Board positions must be up for reelection by the general membership at the annual election meeting in April, held in accordance with Article IV, Section 3 of the Constitution.
 
-**B.** The Executive Board may use an advisory vote of the general membership to assist in the selection of appointed positions such as those on the Advisory Board or committee chairpersonships.
+**B.** All other positions, including those on the Advisory Board and committee chairpersonships, shall be appointed or elected once per year, at a time deemed appropriate by the President and the Executive Board, either at the annual election meeting or later in the year.
+
+**C.** The Executive Board may use an advisory vote of the general membership to assist in the selection of appointed positions such as those on the Advisory Board or committee chairpersonships.
 
 ## Article VII - Discipline
 
@@ -208,7 +206,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 
 **B.** The Executive Board shall be responsible for maintaining standing rules to govern all MITOC disciplinary actions.
 
-**C.** For the safety of its participants, MITOC maintains a zero-tolerance policy for stalking, violent threats of any kind, physical violence (including sexual assault), domestic/dating violence, and sexual harassment. Any person who engages in these behaviors shall be removed from the club by a two-thirds vote of the Executive Board, and the matter shall also be referred to the MIT offices named in Article III of the Constitution. This policy applies to members and MITOC Guests alike.
+**C.** For the safety of its participants, MITOC maintains a zero-tolerance policy for stalking, violent threats of any kind, physical violence (including sexual assault), domestic/dating violence, and sexual harassment. Any person who engages in these behaviors shall be removed from the club by a two-thirds vote of the Executive Board. If an MIT student is involved, the matter shall also be referred to the MIT offices named in Article III of the Constitution. This policy applies to members and MITOC Guests alike.
 
 ## Article VIII - Governing Documents
 

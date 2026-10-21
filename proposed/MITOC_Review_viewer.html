@@ -316,7 +316,7 @@ window.MITOC = {
       id: "N9", severity: "recommended", source: "new", docs: ["bylaws"],
       title: "Keep all MITOC money in MIT accounts",
       problem: "The financial policies say nothing about where revenue goes. The Handbook treats all student organization money as Institute funds. It prohibits outside platforms and requires prompt deposit.",
-      fix: "Add Bylaws Art. V.D on Institute funds, and add prompt deposit to the Bursar's duties.",
+      fix: "Add prompt deposit to the Bursar's duties.",
       cites: [
         { src: "Handbook", page: "55", text: "“All funds associated with student organizations are considered Institute funds, including those raised through fundraising efforts, membership fees, or event revenues. … The use of unauthorized financial platforms like Venmo, Cash App, Eventbrite or GoFundMe for collecting funds is prohibited.”" },
         { src: "Handbook", page: "58", text: "“All checks and cash should be deposited immediately upon receipt.”" },
@@ -337,20 +337,10 @@ window.MITOC = {
       id: "N12", severity: "minor", source: "new", docs: ["bylaws"],
       title: "Define the membership tiers and map them to MIT’s categories",
       problem: "The Handbook defines its own categories. A Member is an MIT student, a Participant is an involved non-student, and an Attendee is someone who only attends events. Engage keeps a separate roster for each. MITOC calls its non-student members “community members” and the old bylaws use several names for the tiers, so it is easy to put people on the wrong Engage roster.",
-      fix: "Name the tiers MIT Student Member, MIT Community Member, MITOC Guest, and Active Member, and define them at the start of Bylaws Article II. Then map each tier onto the Handbook category that matches the person’s involvement: an MIT student is a Member or an Attendee; anyone else is a Participant, an Advisor, or an Attendee. The Constitution keeps only a short pointer to the Bylaws.",
+      fix: "Name the tiers MIT Student Member, MIT Community Member, MITOC Guest, and Participating Member, and define them at the start of Bylaws Article II. Then map each tier onto the Handbook category that matches the person’s involvement: an MIT student is a Member or an Attendee; anyone else is a Participant, an Advisor, or an Attendee. The Constitution keeps only a short pointer to the Bylaws.",
       cites: [
         { src: "Handbook", page: "63", text: "“Member: An MIT student involved in a student organization who regularly participates in meetings or organizational operations.” “Participant: A non-student individual involved in a student organization who regularly participates in meetings or organizational operations.” “Student Organization Advisor: A non-student individual who provides guidance, support, and perspective to a student organization …” “Attendee: Any individual, MIT student or non-student, who attends organization events or activities but is not otherwise involved in the student organization.”" },
         { src: "Form", page: "2", text: "Required on Engage: “Current/Active Member Roster; Current/Active Participant and/or Advisor Roster (if applicable)”" }
-      ]
-    },
-    {
-      id: "N14", severity: "minor", source: "new", docs: ["bylaws"],
-      title: "Tie trips to MIT travel registration",
-      problem: "Most MITOC trips go more than 25 miles from campus. The Handbook requires trip leaders to file the Domestic Travel Form at least 10 working days before departure and to carry certain information on the trip. The Safety Committees review itineraries, but the old bylaws do not tie that review to the MIT requirement.",
-      fix: "Add a Safety Committee duty to make sure trips comply with MIT travel policies.",
-      cites: [
-        { src: "Handbook", page: "52", text: "“Recognized student organizations traveling on behalf of MIT must consult with SOLE prior to any travel … Failure to register your trip with SOLE could result in loss of group privileges …” “Trip leaders must submit the Domestic Travel Form at least 10 working days prior to departure.”" },
-        { src: "Handbook", page: "53", text: "“Trip leaders must have a list of all trip participants … a general trip itinerary … contact information for the Dean on Call and MIT Police while traveling.”" }
       ]
     },
     {
@@ -369,6 +359,22 @@ window.MITOC = {
       cites: [
         { src: "Form", page: "5", text: "“Your student organization is also required to have all current active officers listed on the student organization's group page on Engage.”" },
         { src: "Handbook", page: "5", text: "Re-registration requirement: “Confirm officer roster on Engage”" }
+      ]
+    },
+    {
+      id: "N17", severity: "minor", source: "new", docs: ["bylaws"],
+      title: "Remove MITOC discounts",
+      problem: "The old bylaws list “Receive MITOC discounts” as a privilege of Active Members. MITOC discounts have been discontinued.",
+      fix: "Delete the item from Bylaws Art. II, Sec. 3.B.",
+      cites: []
+    },
+    {
+      id: "N18", severity: "minor", source: "new", docs: ["constitution", "bylaws"],
+      title: "Rename Active Members to Participating Members",
+      problem: "SOLE and Engage use “Active Member” for their own roster category, so MITOC’s tier of the same name invites confusion when reporting membership.",
+      fix: "Call the tier Participating Members in the Constitution and the Bylaws.",
+      cites: [
+        { src: "Form", page: "2", text: "Required on Engage: “Current/Active Member Roster; Current/Active Participant and/or Advisor Roster (if applicable)”" }
       ]
     },
 
@@ -546,8 +552,7 @@ window.MITOC = {
       problem: "The old bylaws give trip leader approval to “the Safety Committee”. In practice, approval depends on the season, and activity chairs approve leaders for smaller programs.",
       fix: "State the seasonal split once and allow the committees to delegate approval to activity chairs.",
       cites: [
-        { src: "Handbook", page: "6", text: "Good standing requires “Activities and operations that are in alignment with their constitution as approved by the ASA.”" },
-        { src: "Handbook", page: "52", text: "Trip leaders carry MIT travel obligations (see N14)." }
+        { src: "Handbook", page: "6", text: "Good standing requires “Activities and operations that are in alignment with their constitution as approved by the ASA.”" }
       ]
     },
     {
@@ -597,11 +602,11 @@ The purpose of MITOC shall be to create a safe community around outdoor recreati
 The purpose of MITOC shall be to create a safe community around outdoor recreation and to provide students with the education and means to use, enjoy, and explore the great outdoors.`
         },
         {
-          id: "c-art3-members", notes: ["R3", "N4"], links: {"R3": ["All members of the general membership may vote"], "N4": ["“regular student status” shall mean MIT undergraduate", "For purposes of this Constitution and the Bylaws", "shall mean a student as defined"]}, rest: "R3",
+          id: "c-art3-members", notes: ["R3", "N4", "N18"], links: {"N18": ["Participating Member"], "R3": ["All members of the general membership may vote"], "N4": ["“regular student status” shall mean MIT undergraduate", "For purposes of this Constitution and the Bylaws", "shall mean a student as defined"]}, rest: "R3",
           old: `## Article III - Membership
 Participation in MITOC shall consist of a tiered structure including members and non-members, as delineated in the Bylaws. Members will consist of MIT student members with regular student status and community members, while non-members shall be called “MITOC guests.” All MIT students are eligible for membership in the organization. The general membership shall be defined as the sum of the MIT student members with regular student status and community members. For purposes of this Constitution, “regular student status” shall mean MIT undergraduate and graduate students who are properly registered at MIT as current students and are fulfilling all of their MIT financial obligations to retain the status of regular students. The organization’s membership will at all times consist of at least 10 MIT students.`,
           new: `## Article III - Membership
-Participation in MITOC shall consist of members and non-members, as delineated in the Bylaws. All MIT students are eligible for membership in the organization. The general membership shall be defined as the sum of the MIT Student Members, MIT Community Members, and Active Members, as defined in the Bylaws. All members of the general membership may vote in elections and on amendments at general meetings.
+Participation in MITOC shall consist of members and non-members, as delineated in the Bylaws. All MIT students are eligible for membership in the organization. The general membership shall be defined as the sum of the MIT Student Members, MIT Community Members, and Participating Members, as defined in the Bylaws. All members of the general membership may vote in elections and on amendments at general meetings.
 
 For purposes of this Constitution and the Bylaws, “MIT student” shall mean a student as defined in the MIT Student Organization Handbook: an undergraduate or graduate student who, during the fall and spring terms, is properly registered at MIT with no registration holds. A student on leave from MIT is not an MIT student. The organization’s membership will at all times consist of at least 10 MIT students.`
         },
@@ -655,8 +660,8 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
     4. If an individual serving as a member at-large departs from MIT and no longer has regular student status, the position may continue to be held provided that a majority of the executive board still remains composed of MIT students with regular student status.`,
           new: `A. Elections
     1. Elections for the Executive Board shall be held each year at a general meeting in April. The date of the election meeting shall be announced to the general membership at least two weeks in advance.
-    2. The quorum for any election is 10 members of the general membership. This quorum applies to every election, including Advisory Board elections and elections to fill vacancies.
-    3. The President shall moderate elections and solicit nominations in advance. If the President is a candidate for a position, the Executive Board shall designate another moderator for that election. The moderator does not vote in elections. Any member may nominate any eligible candidate, including themselves, and nominees must accept their nomination.
+    2. The quorum for an election to the Executive Board, including the annual election and any election to fill an Executive Board vacancy, is at least 10 MIT students who are members of the general membership.
+    3. The President shall moderate elections and solicit nominations in advance. If the President is a candidate for a position, the Executive Board shall designate another moderator for the election to that position only, and the President moderates the remaining elections. A moderator does not vote in the elections they moderate. Any member may nominate any eligible candidate, including themselves, and nominees must accept their nomination.
     4. Only MIT students may be candidates for Executive Board positions.
     5. All members of the general membership may vote. The moderator decides how votes are cast and counted, using anonymous voting where possible.
     6. For single-seat Executive Board positions, a candidate needs the votes of a majority of the members present; if no candidate has a majority, a runoff is held between the top two.
@@ -679,7 +684,7 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
     2. Newly elected officers assume their roles at the conclusion of the annual elections in the spring.`,
           new: `C. Appointments
     1. Committee chairpersons shall be appointed by the Executive Board in accordance with the Bylaws.
-    2. Advisory Board members are appointed by the Executive Board. Except for the Mediation Chairs and the Safety Committees, the Executive Board may instead fill a position by election at the annual election or at another general meeting.`
+    2. Advisory Board members and committee chairpersons are appointed by the Executive Board. Except for the Mediation Chairs and the Safety Committees, the Executive Board may instead fill a position by election at the annual election meeting or at another general meeting. Such an election requires only the Executive Board quorum set out in Article V, Section D.1.`
         },
         {
           id: "c-art4-s3-vacancies", notes: ["R13"],
@@ -727,7 +732,7 @@ D. Quorum and decisions
     1. A quorum for general meetings shall consist of a majority of the Executive Board in attendance.
     2. For in-person votes, once a quorum is established, a simple majority of the Executive Board present is required for a decision.
     3. For asynchronous email votes, a simple majority of Executive Board members who actively participate (i.e., do not abstain) is required for a decision. Upon receiving a call to votes, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
-    4. Votes of the general membership, including elections and amendments, require the quorum set out in Article IV, Section 3.A.2.`
+    4. Executive Board elections and amendment votes require the quorum set out in Article IV, Section 3.A.2. All other elections require only the quorum in item 1.`
         },
         {
           id: "c-art6-a", notes: ["R12"],
@@ -777,7 +782,7 @@ Ratified 9/15/2025`,
 Proposed draft, October 2026`
         },
         {
-          id: "b-1a", notes: ["R16", "R5", "R6", "R3"], links: {"R3": ["MIT Community Members"], "R16": ["annual advisory", "Approve the annual", "spending in accordance with Article V"], "R6": ["IV, Section 3 of the Constitution"], "R5": ["membership in accordance with Article V of the Constitution"], "-": ["disciplinary"]},
+          id: "b-1a", notes: ["R16", "R5", "R6", "R3"], links: {"R3": ["MIT Community Members"], "R16": ["annual advisory", "Approve the annual", "spending in accordance with Article V"], "R6": ["IV, Section 3 of the Constitution"], "R5": ["in accordance with Article V of the Constitution"], "-": ["disciplinary"]},
           old: `## Article I - Organization Structure
 ### Section 1: Executive Board
 A. The Executive Board shall have the following powers and duties:
@@ -897,7 +902,7 @@ A. The Advisory Board shall have the following powers and duties:
     3. Serve MITOC in all other ways deemed necessary by the Executive Board.`
         },
         {
-          id: "b-2", notes: ["R3", "N12", "N8", "N10"], links: {"N12": ["Participation in MITOC shall consist of the following", "MIT Student Members: MIT students", "MITOC Guests: non-members", "Active Members: MIT Student Members", "MIT Community Members: individuals who are not MIT students", "matches their involvement", "are Members if they regularly participate", "are Participants if they regularly participate"], "N8": ["waive dues"], "N10": ["Liability Waiver"]}, rest: "R3",
+          id: "b-2", notes: ["R3", "N12", "N8", "N10", "N18"], links: {"N18": ["Participating Member"], "N12": ["Participation in MITOC shall consist of the following", "MIT Student Members: MIT students", "MITOC Guests: non-members", "Participating Members: MIT Student Members", "MIT Community Members: individuals who are not MIT students", "matches their involvement", "are Members if they regularly participate", "are Participants if they regularly participate"], "N8": ["waive dues"], "N10": ["Liability Waiver"]}, rest: "R3",
           old: `## Article II - Membership
 The involvement of individuals in MITOC shall be governed based on the categories of Student Members, Community Members , Active Members, and MITOC Guests. These categories shall be defined in the following sections, and individuals in each category shall pay dues to MITOC.`,
           new: `## Article II - Membership
@@ -905,18 +910,18 @@ Participation in MITOC shall consist of the following:
 - __MIT Student Members__: MIT students, as defined in Article III of the Constitution, who join MITOC.
 - __MIT Community Members__: individuals who are not MIT students, who are current MIT faculty, staff, fellows, employees, or affiliates, hold MIT visitor appointments, or have a current Kerberos account, and who join MITOC.
 - __MITOC Guests__: non-members who take part in MITOC trips, gear rentals, or events.
-- __Active Members__: MIT Student Members, MIT Community Members, and MITOC Guests who meet the participation requirements in Section 3.
+- __Participating Members__: MIT Student Members, MIT Community Members, and MITOC Guests who meet the participation requirements in Section 3.
 
-MIT Student Members, MIT Community Members, and Active Members make up the general membership. These categories shall be defined in the following sections, and individuals in each category shall pay dues to MITOC. MITOC shall waive dues for any MIT Student Member who cannot afford them.
+MIT Student Members, MIT Community Members, and Participating Members make up the general membership. These categories shall be defined in the following sections, and individuals in each category shall pay dues to MITOC. MITOC shall waive dues for any MIT Student Member who cannot afford them.
 
 For MIT’s student organization records, including MITOC’s Engage rosters, each person is reported under the category defined in the MIT Student Organization Handbook that matches their involvement:
-- MIT Student Members, and Active Members who are MIT students, are Members if they regularly participate in MITOC’s meetings or organizational operations, and Attendees otherwise.
-- MIT Community Members, MITOC Guests, and other Active Members are Participants if they regularly participate in MITOC’s meetings or organizational operations, Student Organization Advisors if they provide guidance, support, and perspective to MITOC, and Attendees otherwise. A MITOC Guest who is an MIT student is reported as an MIT Student Member would be.
+- MIT Student Members, and Participating Members who are MIT students, are Members if they regularly participate in MITOC’s meetings or organizational operations, and Attendees otherwise.
+- MIT Community Members, MITOC Guests, and other Participating Members are Participants if they regularly participate in MITOC’s meetings or organizational operations, Student Organization Advisors if they provide guidance, support, and perspective to MITOC, and Attendees otherwise. A MITOC Guest who is an MIT student is reported as an MIT Student Member would be.
 
 All members must complete and sign the MIT General Liability Waiver for Student Organizations before participating in MITOC activities.`
         },
         {
-          id: "b-2s1", notes: ["R3", "R1", "N4"], links: {"N4": ["currently enrolled MIT students", "as defined in Article III"], "R3": ["in good standing with MIT", "Vote in elections", "Active Members,"], "R1": ["at Large"]}, rest: "R3",
+          id: "b-2s1", notes: ["R3", "R1", "N4", "N18"], links: {"N18": ["Participating Member"], "N4": ["currently enrolled MIT students", "as defined in Article III"], "R3": ["in good standing with MIT", "Vote in elections", "Participating Members"], "R1": ["at Large"]}, rest: "R3",
           old: `### Section 1: Student Members
 A. Student members must meet the following requirements:
     1. Student members must be currently enrolled MIT students,
@@ -930,10 +935,10 @@ A. MIT Student Members must meet the following requirement:
 B. MIT Student Members shall be privileged to do the following in MITOC:
     1. Serve in the positions of President, Vice President, Treasurer, Bursar or Member at-Large,
     2. Vote in elections and on amendments at general meetings,
-    3. Act in any of the ways privileged to MIT Community Members, Active Members, or MITOC Guests.`
+    3. Act in any of the ways privileged to MIT Community Members, Participating Members, or MITOC Guests.`
         },
         {
-          id: "b-2s2", notes: ["R3", "R1", "N12"], links: {"R1": ["may not serve on the Executive Board"], "N12": ["must meet the definition"]}, rest: "R3",
+          id: "b-2s2", notes: ["R3", "R1", "N12", "N18"], links: {"N18": ["Participating Member"], "R1": ["may not serve on the Executive Board"], "N12": ["must meet the definition"]}, rest: "R3",
           old: `### Section 2: Community Members
 A. Community members must meet the following requirements:
     1. Community members must be current MIT faculty, staff, fellows, employees, affiliates, have visitor appointments, or have a current Kerberos.
@@ -946,13 +951,13 @@ A. MIT Community Members must meet the following requirement:
     1. MIT Community Members must meet the definition in the opening of this Article.
 B. MIT Community Members shall be privileged to do the following in MITOC:
     1. Vote in elections and on amendments at general meetings, subject to the quorum requirements of the Constitution,
-    2. Act in any of the ways privileged to Active Members or MITOC Guests.
+    2. Act in any of the ways privileged to Participating Members or MITOC Guests.
 C. Limitations:
     1. MIT Community Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
     2. MIT Community Members may not serve on the Executive Board.`
         },
         {
-          id: "b-2s3", notes: ["R3", "R1", "R18"], links: {"R18": ["with the approval of the Executive Board and the Safety Committee"], "R1": ["Serve as Executive Board members at-large"]}, rest: "R3",
+          id: "b-2s3", notes: ["R3", "R1", "R18", "N17", "N18"], links: {"N18": ["Participating Member"], "R18": ["with the approval of the Executive Board and the Safety Committee"], "R1": ["Serve as Executive Board members at-large"], "N17": ["Receive MITOC discounts"]}, rest: "R3",
           old: `### Section 3: Active Members
 A. Active members must meet the following requirements:
     1. Active members must be in good standing with MIT and the MITOC Executive Board.
@@ -967,22 +972,21 @@ B. Active members shall be privileged to do the following in MITOC:
     8. Act in any of the ways privileged to MITOC Guests.
 C. Limitations:
     1. Active members shall not be permitted to participate in MITOC to the detriment of Student members, as deemed by the Executive Board.`,
-          new: `### Section 3: Active Members
-A. An MIT Student Member, MIT Community Member, or MITOC Guest becomes an Active Member when they meet the following requirements:
+          new: `### Section 3: Participating Members
+A. An MIT Student Member, MIT Community Member, or MITOC Guest becomes a Participating Member when they meet the following requirements:
     1. They must be in good standing with MIT and the MITOC Executive Board.
     2. They must have participated (as a leader or participant) in greater than or equal to 2 trips within the past year.
-B. Active Members shall be privileged to do the following in MITOC:
+B. Participating Members shall be privileged to do the following in MITOC:
     1. Serve as MITOC trip leaders, once approved under Article III,
     2. Vote in Executive Board elections, with the endorsement of the Executive Board,
     3. Serve on the Advisory Board,
     4. Serve on MITOC committees,
-    5. Receive MITOC discounts,
-    6. Act in any of the ways privileged to MITOC Guests.
+    5. Act in any of the ways privileged to MITOC Guests.
 C. Limitations:
-    1. Active Members who are not MIT Student Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.`
+    1. Participating Members who are not MIT Student Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.`
         },
         {
-          id: "b-2s4", notes: ["R3"],
+          id: "b-2s4", notes: ["R3", "N18"], links: {"N18": ["Participating Member"]}, rest: "R3",
           old: `### Section 4: MITOC Guests
 A. MITOC Guests must meet the following requirements:
     1. MITOC Guests must be in good standing with MIT and the MITOC Executive Board.
@@ -1001,10 +1005,10 @@ B. MITOC Guests shall be privileged to do the following in MITOC:
     3. Attend MITOC events.
 C. Limitations:
     1. MITOC Guests shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
-    2. MITOC Guests who are not Active Members may not vote in elections or on amendments.`
+    2. MITOC Guests who are not Participating Members may not vote in elections or on amendments.`
         },
         {
-          id: "b-3s1", notes: ["R18", "N14"], links: {"N14": ["MIT travel policies", "=activities."], "R18": ["Winter Safety Committee carries out", "delegate to activity chairs"]},
+          id: "b-3s1", notes: ["R18"], links: {"R18": ["Winter Safety Committee carries out", "delegate to activity chairs"]},
           old: `## Article III - Committees
 ### Section 1: Safety Committees
 A. There shall be two Safety Committees: the Winter Safety Committee and the 3-Season Safety Committee.
@@ -1022,8 +1026,7 @@ B. The Safety Committees are standing committees and shall have the following po
     2. Approve and rate trip leaders, which they may delegate to activity chairs where applicable,
     3. Review and approve of trip itineraries,
     4. Investigate and report on incidents that take place during MITOC activities,
-    5. Issue safety standards for MITOC activities,
-    6. Ensure that MITOC trips comply with MIT travel policies, including registering trips with SOLE where the MIT Student Organization Handbook requires it.`
+    5. Issue safety standards for MITOC activities.`
         },
         {
           id: "b-3s2", notes: [],
@@ -1048,7 +1051,7 @@ A. The Executive Board and Advisory Board shall hold the monthly general meeting
 B. All meetings shall be governed in accordance with the Constitution and Bylaws.`
         },
         {
-          id: "b-5", notes: ["R16", "N9"], links: {"N9": ["Institute funds"]}, rest: "R16",
+          id: "b-5", notes: ["R16"],
           old: `## Article V - Financial Policies
 A. An annual, non-binding budget shall be prepared and approved by the Executive Board for planning purposes.
 B. All members of the Executive and Advisory Boards shall be permitted a total of $100 of discretionary spending every month.
@@ -1056,17 +1059,17 @@ C. All purchases over $100 or not pre-approved in the budget must be approved by
           new: `## Article V - Financial Policies
 A. The Treasurer shall prepare an annual budget for approval by the Executive Board, normally at a budget meeting in June. Items may be added to the budget at other times by a vote of the Executive Board.
 B. Each Executive Board and Advisory Board position may oversee up to $100 of discretionary spending per month. If a position is shared between multiple people, they share a single spending cap; the only exception is the members at-large, each of whom has a separate cap. Discretionary spending may only be used for incidentals. The Treasurer approves discretionary spending. Discretionary spending above this amount may be requested as a budget item.
-C. All other spending must be approved by a vote of the Executive Board and recorded in the budget. The Treasurer shall not reimburse spending that has not been approved or that exceeds the budget.
-D. All MITOC funds are Institute funds. All revenue, including dues and fees, shall be deposited into MITOC’s MIT accounts, and MITOC shall not collect funds through external platforms such as Venmo, PayPal, or GoFundMe.`
+C. All other spending must be approved by a vote of the Executive Board and recorded in the budget. The Treasurer shall not reimburse spending that has not been approved or that exceeds the budget.`
         },
         {
-          id: "b-6", notes: ["R6"],
+          id: "b-6", notes: ["R6", "R4"], links: {"R4": ["All other positions"]}, rest: "R6",
           old: `## Article VI - Elections
 A. All elected positions must be up for reelection by the general membership in a well-publicized meeting during the spring semester.
 B. The Executive Board may use an advisory vote of the general membership to assist in the selection of appointed positions such as those on the Advisory Board or committee chairpersonships.`,
           new: `## Article VI - Elections
-A. All elected positions must be up for reelection by the general membership at the annual election meeting in April, held in accordance with Article IV, Section 3 of the Constitution.
-B. The Executive Board may use an advisory vote of the general membership to assist in the selection of appointed positions such as those on the Advisory Board or committee chairpersonships.`
+A. All Executive Board positions must be up for reelection by the general membership at the annual election meeting in April, held in accordance with Article IV, Section 3 of the Constitution.
+B. All other positions, including those on the Advisory Board and committee chairpersonships, shall be appointed or elected once per year, at a time deemed appropriate by the President and the Executive Board, either at the annual election meeting or later in the year.
+C. The Executive Board may use an advisory vote of the general membership to assist in the selection of appointed positions such as those on the Advisory Board or committee chairpersonships.`
         },
         {
           id: "b-7", notes: ["R2"],
@@ -1076,7 +1079,7 @@ B. The Executive Board shall be responsible for maintaining standing rules to go
           new: `## Article VII - Discipline
 A. Any member or affiliate found by the Executive Board to be in violation of MITOC policies or MIT Policies and Procedures including but not limited to those laid out in the Constitution or these Bylaws, any rules of order or safety standards set by the safety committee, or the purpose or community standards of MITOC may be warned, censured, or removed from office or membership. Removal from office or membership requires a two-thirds vote of the Executive Board under Article III of the Constitution and is limited to non-conduct reasons, including violations of the zero-tolerance policy in Section C. Complaints about personal conduct shall be referred to the appropriate MIT offices as Article III of the Constitution requires.
 B. The Executive Board shall be responsible for maintaining standing rules to govern all MITOC disciplinary actions.
-C. For the safety of its participants, MITOC maintains a zero-tolerance policy for stalking, violent threats of any kind, physical violence (including sexual assault), domestic/dating violence, and sexual harassment. Any person who engages in these behaviors shall be removed from the club by a two-thirds vote of the Executive Board, and the matter shall also be referred to the MIT offices named in Article III of the Constitution. This policy applies to members and MITOC Guests alike.`
+C. For the safety of its participants, MITOC maintains a zero-tolerance policy for stalking, violent threats of any kind, physical violence (including sexual assault), domestic/dating violence, and sexual harassment. Any person who engages in these behaviors shall be removed from the club by a two-thirds vote of the Executive Board. If an MIT student is involved, the matter shall also be referred to the MIT offices named in Article III of the Constitution. This policy applies to members and MITOC Guests alike.`
         },
         {
           id: "b-8", notes: [],
@@ -1163,6 +1166,8 @@ D. These Bylaws shall be amended in accordance with Article VI of the Constituti
   // The whole block is diffed as one stream of words, with line breaks as tokens, so a
   // paragraph that was split, merged, or reworded still lines up with its old text.
   // Inline markup: __text__ is underlined. Words carry an underline flag through the diff.
+  // Trailing punctuation is its own token, so adding a period or comma marks only the mark.
+  // Item labels ("B.", "12.") stay whole so renumbering is still recognised as mechanical.
   const plain = t => t.replace(/__/g, "");
   const inline = t => esc(t).replace(/__(.+?)__/g, "<u>$1</u>");
   function inlineWords(text) {
@@ -1170,7 +1175,11 @@ D. These Bylaws shall be amended in accordance with Article VI of the Constituti
     text.split("__").forEach((part, idx) => {
       const lead = part.match(/^\s+/);
       if (lead && out.length) out[out.length - 1].t += lead[0];
-      for (const w of part.match(/\S+\s*/g) || []) out.push({ t: w, u: idx % 2 === 1 });
+      for (const w of part.match(/\S+\s*/g) || []) {
+        const m = w.match(/^(.+?)([.,;:!?]+\s*)$/);
+        if (m && !/^([A-Z]|\d+)$/.test(m[1])) { out.push({ t: m[1], u: idx % 2 === 1 }); out.push({ t: m[2], u: idx % 2 === 1 }); }
+        else out.push({ t: w, u: idx % 2 === 1 });
+      }
     });
     return out;
   }

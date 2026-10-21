@@ -294,6 +294,8 @@ a { color: var(--accent); }
   // The whole block is diffed as one stream of words, with line breaks as tokens, so a
   // paragraph that was split, merged, or reworded still lines up with its old text.
   // Inline markup: __text__ is underlined. Words carry an underline flag through the diff.
+  // Trailing punctuation is its own token, so adding a period or comma marks only the mark.
+  // Item labels ("B.", "12.") stay whole so renumbering is still recognised as mechanical.
   const plain = t => t.replace(/__/g, "");
   const inline = t => esc(t).replace(/__(.+?)__/g, "<u>$1</u>");
   function inlineWords(text) {
@@ -301,7 +303,11 @@ a { color: var(--accent); }
     text.split("__").forEach((part, idx) => {
       const lead = part.match(/^\s+/);
       if (lead && out.length) out[out.length - 1].t += lead[0];
-      for (const w of part.match(/\S+\s*/g) || []) out.push({ t: w, u: idx % 2 === 1 });
+      for (const w of part.match(/\S+\s*/g) || []) {
+        const m = w.match(/^(.+?)([.,;:!?]+\s*)$/);
+        if (m && !/^([A-Z]|\d+)$/.test(m[1])) { out.push({ t: m[1], u: idx % 2 === 1 }); out.push({ t: m[2], u: idx % 2 === 1 }); }
+        else out.push({ t: w, u: idx % 2 === 1 });
+      }
     });
     return out;
   }

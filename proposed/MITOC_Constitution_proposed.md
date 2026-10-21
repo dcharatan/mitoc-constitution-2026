@@ -12,7 +12,7 @@ The purpose of MITOC shall be to create a safe community around outdoor recreati
 
 ## Article III - Membership
 
-Participation in MITOC shall consist of members and non-members, as delineated in the Bylaws. All MIT students are eligible for membership in the organization. The general membership shall be defined as the sum of the MIT Student Members, MIT Community Members, and Active Members, as defined in the Bylaws. All members of the general membership may vote in elections and on amendments at general meetings.
+Participation in MITOC shall consist of members and non-members, as delineated in the Bylaws. All MIT students are eligible for membership in the organization. The general membership shall be defined as the sum of the MIT Student Members, MIT Community Members, and Participating Members, as defined in the Bylaws. All members of the general membership may vote in elections and on amendments at general meetings.
 
 For purposes of this Constitution and the Bylaws, “MIT student” shall mean a student as defined in the MIT Student Organization Handbook: an undergraduate or graduate student who, during the fall and spring terms, is properly registered at MIT with no registration holds. A student on leave from MIT is not an MIT student. The organization’s membership will at all times consist of at least 10 MIT students.
 
@@ -43,8 +43,8 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 **A.** Elections
 
 - **1.** Elections for the Executive Board shall be held each year at a general meeting in April. The date of the election meeting shall be announced to the general membership at least two weeks in advance.
-- **2.** The quorum for any election is 10 members of the general membership. This quorum applies to every election, including Advisory Board elections and elections to fill vacancies.
-- **3.** The President shall moderate elections and solicit nominations in advance. If the President is a candidate for a position, the Executive Board shall designate another moderator for that election. The moderator does not vote in elections. Any member may nominate any eligible candidate, including themselves, and nominees must accept their nomination.
+- **2.** The quorum for an election to the Executive Board, including the annual election and any election to fill an Executive Board vacancy, is at least 10 MIT students who are members of the general membership.
+- **3.** The President shall moderate elections and solicit nominations in advance. If the President is a candidate for a position, the Executive Board shall designate another moderator for the election to that position only, and the President moderates the remaining elections. A moderator does not vote in the elections they moderate. Any member may nominate any eligible candidate, including themselves, and nominees must accept their nomination.
 - **4.** Only MIT students may be candidates for Executive Board positions.
 - **5.** All members of the general membership may vote. The moderator decides how votes are cast and counted, using anonymous voting where possible.
 - **6.** For single-seat Executive Board positions, a candidate needs the votes of a majority of the members present; if no candidate has a majority, a runoff is held between the top two.
@@ -61,7 +61,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 **C.** Appointments
 
 - **1.** Committee chairpersons shall be appointed by the Executive Board in accordance with the Bylaws.
-- **2.** Advisory Board members are appointed by the Executive Board. Except for the Mediation Chairs and the Safety Committees, the Executive Board may instead fill a position by election at the annual election or at another general meeting.
+- **2.** Advisory Board members and committee chairpersons are appointed by the Executive Board. Except for the Mediation Chairs and the Safety Committees, the Executive Board may instead fill a position by election at the annual election meeting or at another general meeting. Such an election requires only the Executive Board quorum set out in Article V, Section D.1.
 
 **D.** Vacancies
 
@@ -98,7 +98,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 - **1.** A quorum for general meetings shall consist of a majority of the Executive Board in attendance.
 - **2.** For in-person votes, once a quorum is established, a simple majority of the Executive Board present is required for a decision.
 - **3.** For asynchronous email votes, a simple majority of Executive Board members who actively participate (i.e., do not abstain) is required for a decision. Upon receiving a call to votes, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
-- **4.** Votes of the general membership, including elections and amendments, require the quorum set out in Article IV, Section 3.A.2.
+- **4.** Executive Board elections and amendment votes require the quorum set out in Article IV, Section 3.A.2. All other elections require only the quorum in item 1.
 
 ## Article VI - Founding Documents and Amendments
 
