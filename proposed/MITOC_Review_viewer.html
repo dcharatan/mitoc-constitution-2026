@@ -174,6 +174,21 @@ a { color: var(--accent); }
 
 .toast { position: fixed; left: 50%; bottom: calc(20px + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%); background: var(--fg); color: var(--paper); padding: 8px 14px; border-radius: 8px; font-size: 0.85rem; z-index: 20; max-width: calc(100% - 32px); }
 
+/* Wide windows show both documents side by side, each column scrolling on its own. */
+.split .tabs, .split #dl-md, .split #dl-pdf { display: none; }
+.split .wrap { max-width: none; }
+.split main { padding-top: 0; padding-bottom: 0; }
+.cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 12px; align-items: start; }
+.col { display: flex; flex-direction: column; height: calc(100vh - var(--top, 48px)); padding-top: 12px; }
+.col-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; margin-bottom: 8px; padding-right: 10px; }
+.col-body { flex: 1; min-height: 0; overflow-y: auto; padding: 0 10px 48px 2px; }
+.col-head h2 { margin: 0; font-family: var(--font-doc); font-size: 1.05rem; font-weight: 700; }
+.col-head .tools { padding-block: 0; }
+.split .diffmode .block { grid-template-columns: minmax(0, 1fr) 210px; gap: 8px 14px; }
+.split .sheet { padding: 20px clamp(12px, 1.4vw, 24px); }
+.split .doctext { max-width: none; }
+.split .note { padding: 6px 8px; font-size: 0.76rem; }
+
 @media (max-width: 900px) {
   .diffmode .block { grid-template-columns: minmax(0, 1fr); }
   .sheet { padding: 16px 14px; }
@@ -1109,7 +1124,9 @@ D. These Bylaws shall be amended in accordance with Article VI of the Constituti
   const NUM = {};
   for (const key of ["constitution", "bylaws"]) for (const b of D.docs[key].blocks) for (const id of b.notes) if (!NUM[id]) NUM[id] = Object.keys(NUM).length + 1;
   for (const i of D.issues) if (!NUM[i.id]) NUM[i.id] = Object.keys(NUM).length + 1;
-  const state = { tab: "constitution", view: "diff" };
+  const state = { tab: "constitution", view: "diff", split: false };
+  const wideQuery = matchMedia("(min-width: 1800px)");
+  state.split = wideQuery.matches;
 
   const hash = location.hash.replace("#", "");
   if (["constitution", "bylaws"].includes(hash)) state.tab = hash;
@@ -1557,13 +1574,31 @@ D. These Bylaws shall be amended in accordance with Article VI of the Constituti
 
   // ---------- Wiring ----------
   const main = document.getElementById("main");
+  const colTools = key => `<div class="tools">
+    <button class="btn" data-dl="md" data-key="${key}">Export Markdown</button>
+    <button class="btn" data-dl="pdf" data-key="${key}">Export PDF</button></div>`;
   function render() {
     for (const t of document.querySelectorAll(".tab")) t.setAttribute("aria-selected", String(t.dataset.tab === state.tab));
     for (const b of document.querySelectorAll("[data-view]")) b.setAttribute("aria-pressed", String(b.dataset.view === state.view));
+    document.body.classList.toggle("split", state.split);
     hidePop();
-    main.innerHTML = renderDoc(state.tab);
+    if (state.split) {
+      layout();
+      main.innerHTML = `<div class="cols">${["constitution", "bylaws"].map(key =>
+        `<div class="col" id="col-${key}"><div class="col-head"><h2>${D.docs[key].name}</h2>${colTools(key)}</div><div class="col-body">${renderDoc(key)}</div></div>`).join("")}</div>`;
+    } else {
+      main.innerHTML = renderDoc(state.tab);
+    }
     linkKey = "";
   }
+  // The columns take the viewport height left under the header and the intro.
+  function layout() {
+    const intro = document.getElementById("intro-wrap");
+    const top = document.querySelector("header.top").offsetHeight + (intro.hidden ? 0 : intro.offsetHeight);
+    document.documentElement.style.setProperty("--top", top + "px");
+  }
+  wideQuery.addEventListener("change", e => { state.split = e.matches; render(); });
+  addEventListener("resize", () => { if (state.split) layout(); });
 
   document.querySelector(".tabs").addEventListener("click", e => {
     const t = e.target.closest("[data-tab]"); if (!t) return;
@@ -1659,15 +1694,18 @@ D. These Bylaws shall be amended in accordance with Article VI of the Constituti
   document.addEventListener("focusin", e => pointAt(e.target));
   document.addEventListener("keydown", e => { if (e.key === "Escape") hidePop(); });
   addEventListener("resize", () => hidePop());
-  document.getElementById("intro-close").addEventListener("click", () => { document.getElementById("intro-wrap").hidden = true; });
-  const docKey = () => state.tab;
-  document.getElementById("dl-md").addEventListener("click", () => {
-    const k = docKey(); saveFile(D.docs[k].file + ".md", toMarkdown(k), "text/markdown");
-  });
-  document.getElementById("dl-pdf").addEventListener("click", () => {
-    const k = docKey();
+  main.addEventListener("scroll", () => hidePop(), true);
+  document.getElementById("intro-close").addEventListener("click", () => { document.getElementById("intro-wrap").hidden = true; if (state.split) layout(); });
+  const exportMd = k => saveFile(D.docs[k].file + ".md", toMarkdown(k), "text/markdown");
+  const exportPdf = k => {
     if (!window.jspdf) { toast("The PDF library didn't load. Check your connection and reload."); return; }
     saveFile(D.docs[k].file + ".pdf", toPdf(k), "application/pdf");
+  };
+  document.getElementById("dl-md").addEventListener("click", () => exportMd(state.tab));
+  document.getElementById("dl-pdf").addEventListener("click", () => exportPdf(state.tab));
+  main.addEventListener("click", e => {
+    const b = e.target.closest("[data-dl]"); if (!b) return;
+    (b.dataset.dl === "md" ? exportMd : exportPdf)(b.dataset.key);
   });
 
   render();
