@@ -196,7 +196,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 
 **A.** All Executive Board positions must be up for reelection by the general membership at the annual election meeting in April, held in accordance with Article IV, Section 3 of the Constitution.
 
-**B.** All other positions, including those on the Advisory Board and committee chairpersonships, shall be appointed or elected once per year, at a time deemed appropriate by the President and the Executive Board, either at the annual election meeting or later in the year.
+**B.** All other positions, including those on the Advisory Board and committee chairpersonships, shall be appointed or elected at least once per year, at a time deemed appropriate by the President and the Executive Board, either at the annual election meeting or later in the year.
 
 **C.** The Executive Board may use an advisory vote of the general membership to assist in the selection of appointed positions such as those on the Advisory Board or committee chairpersonships.
 
