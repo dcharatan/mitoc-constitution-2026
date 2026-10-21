@@ -208,6 +208,7 @@ a { color: var(--accent); }
         <button class="tab" role="tab" id="tab-bylaws" data-tab="bylaws">Bylaws</button>
       </div>
       <div class="tools" id="doc-tools">
+        <button class="btn" id="intro-toggle" hidden aria-controls="intro-wrap">Hide intro</button>
         <div class="seg" role="group" aria-label="View">
           <button id="v-old" data-view="old">Current</button>
           <button id="v-new" data-view="new">Proposed</button>
@@ -233,12 +234,12 @@ a { color: var(--accent); }
           <li>Added required statements to the constitution.</li>
           <li>All Executive Board members (officers) must now be MIT students.</li>
           <li>Constitution changes take effect once the ASA and SOLE approve them.</li>
-          <li>The bylaws now cover dues waivers, the MIT liability waiver, and keeping funds in MIT accounts.</li>
+          <li>The bylaws now waive dues for MIT students who cannot afford them, as MIT requires, and require every member to sign the MIT liability waiver.</li>
         </ul>
       </li>
       <li><b>Changes that fix contradictions:</b>
         <ul>
-          <li>The previous constitution contained contradictory statements about whether Members at-Large must be students. This has been clarified.</li>
+          <li>The previous constitution contained contradictory statements about whether Members-at-Large must be students. This has been clarified.</li>
           <li>Membership categories and voting rights now match.</li>
           <li>Removal rules in the bylaws now follow the constitution.</li>
           <li>Advisory Board appointments and special meetings are described the same way in both documents.</li>
@@ -640,7 +641,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 MITOC shall consist of an Executive Board, an Advisory Board, standing committees as delineated in the Bylaws, and special committees as created by the Executive Board. The Advisory Board shall consist of any positions deemed necessary by the Executive Board. Committee activities shall be managed by a chairperson as appointed by the Executive Board. Advisory Board members and committee chairpersons need not be MIT students and are not officers, unless they also hold an officer position.`
         },
         {
-          id: "c-art4-s2", notes: ["N16", "R4"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"]}, rest: "R4",
+          id: "c-art4-s2", notes: ["N16", "R4"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"], "-": ["Members-at-Large"]}, rest: "R4",
           old: `### Section 2: Officers
 A. Only MIT students are eligible to serve as officers in the organization. These officers, also referred to as the Executive Board, are listed below:
     1. President
@@ -657,7 +658,7 @@ A. Only MIT students are eligible to serve as officers in the organization. Thes
     2. Vice President
     3. Treasurer
     4. Bursar
-    5. Five members at-large
+    5. Five Members-at-Large
 B. The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
 C. All officers shall be listed on MITOC’s Engage officer roster.`
         },
@@ -681,7 +682,7 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
     5. Only MIT students may be candidates for Executive Board positions.
     6. All members of the general membership may vote. The moderator decides how votes are cast and counted, using anonymous voting where possible.
     7. For single-seat Executive Board positions, a candidate needs the votes of a majority of the members present; if no candidate has a majority, a runoff is held between the top two.
-    8. For member at-large, each member who is not a candidate for member at-large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.`
+    8. For Member-at-Large, each member who is not a candidate for Member-at-Large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.`
         },
         {
           id: "c-art4-s3-terms", notes: ["R7"], whole: true,
@@ -722,7 +723,7 @@ A. The President shall preside over all meetings of the Executive Board, Advisor
 B. The Vice President shall record the minutes of Executive Board and general membership meetings, manage MITOC’s email lists, respond to public inquiries, and preside over meetings in the President’s absence.
 C. The Treasurer shall prepare the annual budget for approval by the Executive Board; review, approve, and process reimbursements and other outgoing transactions; prepare the annual financial report in consultation with the Bursar; and manage the financial signatory access of MITOC’s officers with SOLE.
 D. The Bursar shall manage MITOC’s revenue, including the deposit of checks with SOLE; coordinate applications for funding; and assist the Treasurer with the annual budget and financial report.
-E. The members at-large shall lead larger club projects and assist the other members of the Executive Board as needed.
+E. The Members-at-Large shall lead larger club projects and assist the other members of the Executive Board as needed.
 F. As core executive officers, the President and the Treasurer shall complete MIT’s required core officer training, complete MITOC’s annual re-registration with SOLE and the ASA, and keep MITOC’s Engage group page, including its officer, member, and participant rosters, accurate and up to date.
 G. Executive Board members shall carry out any further duties set out in the Bylaws.`
         },
@@ -899,7 +900,7 @@ A. The Executive Board shall have the following powers and duties:
     1. Attend all meetings of the MITOC general membership and Executive Board,
     2. Assist the other members of the Executive Board in their respective tasks,
     3. Serve MITOC in all other ways deemed necessary by the President.`,
-          new: `F. The Members at-Large must be MIT students and shall have the following powers and duties:
+          new: `F. The Members-at-Large must be MIT students and shall have the following powers and duties:
     1. Attend all meetings of the MITOC general membership and Executive Board,
     2. Lead larger club projects,
     3. Assist the other members of the Executive Board in their respective tasks,
@@ -949,7 +950,7 @@ B. Student members shall be privileged to do the following in MITOC:
 A. MIT Student Members must meet the following requirement:
     1. MIT Student Members must be MIT students, as defined in Article III of the Constitution.
 B. MIT Student Members shall be privileged to do the following in MITOC:
-    1. Serve in the positions of President, Vice President, Treasurer, Bursar or Member at-Large,
+    1. Serve in the positions of President, Vice President, Treasurer, Bursar or Member-at-Large,
     2. Vote in elections and on amendments at general meetings,
     3. Act in any of the ways privileged to MIT Community Members, Participating Members, or MITOC Guests.`
         },
@@ -1074,7 +1075,7 @@ B. All members of the Executive and Advisory Boards shall be permitted a total o
 C. All purchases over $100 or not pre-approved in the budget must be approved by the Executive Board.`,
           new: `## Article V - Financial Policies
 A. The Treasurer shall prepare an annual budget for approval by the Executive Board, normally at a budget meeting in June. Items may be added to the budget at other times by a vote of the Executive Board.
-B. Each Executive Board and Advisory Board position may oversee up to $100 of discretionary spending per month. If a position is shared between multiple people, they share a single spending cap; the only exception is the members at-large, each of whom has a separate cap. Discretionary spending may only be used for incidentals. The Treasurer approves discretionary spending. Discretionary spending above this amount may be requested as a budget item.
+B. Each Executive Board and Advisory Board position may oversee up to $100 of discretionary spending per month. If a position is shared between multiple people, they share a single spending cap; the only exception is the Members-at-Large, each of whom has a separate cap. Discretionary spending may only be used for incidentals. The Treasurer approves discretionary spending. Discretionary spending above this amount may be requested as a budget item.
 C. All other spending must be approved by a vote of the Executive Board and recorded in the budget. The Treasurer shall not reimburse spending that has not been approved or that exceeds the budget.`
         },
         {
@@ -1581,6 +1582,7 @@ D. These Bylaws shall be amended in accordance with Article VI of the Constituti
     for (const t of document.querySelectorAll(".tab")) t.setAttribute("aria-selected", String(t.dataset.tab === state.tab));
     for (const b of document.querySelectorAll("[data-view]")) b.setAttribute("aria-pressed", String(b.dataset.view === state.view));
     document.body.classList.toggle("split", state.split);
+    introToggle.hidden = !state.split;
     hidePop();
     if (state.split) {
       layout();
@@ -1695,7 +1697,16 @@ D. These Bylaws shall be amended in accordance with Article VI of the Constituti
   document.addEventListener("keydown", e => { if (e.key === "Escape") hidePop(); });
   addEventListener("resize", () => hidePop());
   main.addEventListener("scroll", () => hidePop(), true);
-  document.getElementById("intro-close").addEventListener("click", () => { document.getElementById("intro-wrap").hidden = true; if (state.split) layout(); });
+  // The intro can be closed anywhere; in the wide view a header button hides and shows it.
+  const introWrap = document.getElementById("intro-wrap"), introToggle = document.getElementById("intro-toggle");
+  function setIntro(show) {
+    introWrap.hidden = !show;
+    introToggle.textContent = show ? "Hide intro" : "Show intro";
+    introToggle.setAttribute("aria-expanded", String(show));
+    if (state.split) layout();
+  }
+  document.getElementById("intro-close").addEventListener("click", () => setIntro(false));
+  introToggle.addEventListener("click", () => setIntro(introWrap.hidden));
   const exportMd = k => saveFile(D.docs[k].file + ".md", toMarkdown(k), "text/markdown");
   const exportPdf = k => {
     if (!window.jspdf) { toast("The PDF library didn't load. Check your connection and reload."); return; }

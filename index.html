@@ -200,6 +200,7 @@ a { color: var(--accent); }
         <button class="tab" role="tab" id="tab-bylaws" data-tab="bylaws">Bylaws</button>
       </div>
       <div class="tools" id="doc-tools">
+        <button class="btn" id="intro-toggle" hidden aria-controls="intro-wrap">Hide intro</button>
         <div class="seg" role="group" aria-label="View">
           <button id="v-old" data-view="old">Current</button>
           <button id="v-new" data-view="new">Proposed</button>
@@ -225,12 +226,12 @@ a { color: var(--accent); }
           <li>Added required statements to the constitution.</li>
           <li>All Executive Board members (officers) must now be MIT students.</li>
           <li>Constitution changes take effect once the ASA and SOLE approve them.</li>
-          <li>The bylaws now cover dues waivers, the MIT liability waiver, and keeping funds in MIT accounts.</li>
+          <li>The bylaws now waive dues for MIT students who cannot afford them, as MIT requires, and require every member to sign the MIT liability waiver.</li>
         </ul>
       </li>
       <li><b>Changes that fix contradictions:</b>
         <ul>
-          <li>The previous constitution contained contradictory statements about whether Members at-Large must be students. This has been clarified.</li>
+          <li>The previous constitution contained contradictory statements about whether Members-at-Large must be students. This has been clarified.</li>
           <li>Membership categories and voting rights now match.</li>
           <li>Removal rules in the bylaws now follow the constitution.</li>
           <li>Advisory Board appointments and special meetings are described the same way in both documents.</li>
@@ -708,6 +709,7 @@ a { color: var(--accent); }
     for (const t of document.querySelectorAll(".tab")) t.setAttribute("aria-selected", String(t.dataset.tab === state.tab));
     for (const b of document.querySelectorAll("[data-view]")) b.setAttribute("aria-pressed", String(b.dataset.view === state.view));
     document.body.classList.toggle("split", state.split);
+    introToggle.hidden = !state.split;
     hidePop();
     if (state.split) {
       layout();
@@ -822,7 +824,16 @@ a { color: var(--accent); }
   document.addEventListener("keydown", e => { if (e.key === "Escape") hidePop(); });
   addEventListener("resize", () => hidePop());
   main.addEventListener("scroll", () => hidePop(), true);
-  document.getElementById("intro-close").addEventListener("click", () => { document.getElementById("intro-wrap").hidden = true; if (state.split) layout(); });
+  // The intro can be closed anywhere; in the wide view a header button hides and shows it.
+  const introWrap = document.getElementById("intro-wrap"), introToggle = document.getElementById("intro-toggle");
+  function setIntro(show) {
+    introWrap.hidden = !show;
+    introToggle.textContent = show ? "Hide intro" : "Show intro";
+    introToggle.setAttribute("aria-expanded", String(show));
+    if (state.split) layout();
+  }
+  document.getElementById("intro-close").addEventListener("click", () => setIntro(false));
+  introToggle.addEventListener("click", () => setIntro(introWrap.hidden));
   const exportMd = k => saveFile(D.docs[k].file + ".md", toMarkdown(k), "text/markdown");
   const exportPdf = k => {
     if (!window.jspdf) { toast("The PDF library didn't load. Check your connection and reload."); return; }

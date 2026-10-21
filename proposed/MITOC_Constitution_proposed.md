@@ -32,7 +32,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 - **2.** Vice President
 - **3.** Treasurer
 - **4.** Bursar
-- **5.** Five members at-large
+- **5.** Five Members-at-Large
 
 **B.** The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
 
@@ -49,7 +49,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 - **5.** Only MIT students may be candidates for Executive Board positions.
 - **6.** All members of the general membership may vote. The moderator decides how votes are cast and counted, using anonymous voting where possible.
 - **7.** For single-seat Executive Board positions, a candidate needs the votes of a majority of the members present; if no candidate has a majority, a runoff is held between the top two.
-- **8.** For member at-large, each member who is not a candidate for member at-large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.
+- **8.** For Member-at-Large, each member who is not a candidate for Member-at-Large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.
 
 **B.** Terms of Office
 
@@ -80,7 +80,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 
 **D.** The Bursar shall manage MITOC’s revenue, including the deposit of checks with SOLE; coordinate applications for funding; and assist the Treasurer with the annual budget and financial report.
 
-**E.** The members at-large shall lead larger club projects and assist the other members of the Executive Board as needed.
+**E.** The Members-at-Large shall lead larger club projects and assist the other members of the Executive Board as needed.
 
 **F.** As core executive officers, the President and the Treasurer shall complete MIT’s required core officer training, complete MITOC’s annual re-registration with SOLE and the ASA, and keep MITOC’s Engage group page, including its officer, member, and participant rosters, accurate and up to date.
 

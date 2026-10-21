@@ -57,7 +57,7 @@
 - **3.** Coordinate the application for funding opportunities,
 - **4.** Serve MITOC in all other ways deemed necessary by the President.
 
-**F.** The Members at-Large must be MIT students and shall have the following powers and duties:
+**F.** The Members-at-Large must be MIT students and shall have the following powers and duties:
 
 - **1.** Attend all meetings of the MITOC general membership and Executive Board,
 - **2.** Lead larger club projects,
@@ -98,7 +98,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 
 **B.** MIT Student Members shall be privileged to do the following in MITOC:
 
-- **1.** Serve in the positions of President, Vice President, Treasurer, Bursar or Member at-Large,
+- **1.** Serve in the positions of President, Vice President, Treasurer, Bursar or Member-at-Large,
 - **2.** Vote in elections and on amendments at general meetings,
 - **3.** Act in any of the ways privileged to MIT Community Members, Participating Members, or MITOC Guests.
 
@@ -188,7 +188,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 
 **A.** The Treasurer shall prepare an annual budget for approval by the Executive Board, normally at a budget meeting in June. Items may be added to the budget at other times by a vote of the Executive Board.
 
-**B.** Each Executive Board and Advisory Board position may oversee up to $100 of discretionary spending per month. If a position is shared between multiple people, they share a single spending cap; the only exception is the members at-large, each of whom has a separate cap. Discretionary spending may only be used for incidentals. The Treasurer approves discretionary spending. Discretionary spending above this amount may be requested as a budget item.
+**B.** Each Executive Board and Advisory Board position may oversee up to $100 of discretionary spending per month. If a position is shared between multiple people, they share a single spending cap; the only exception is the Members-at-Large, each of whom has a separate cap. Discretionary spending may only be used for incidentals. The Treasurer approves discretionary spending. Discretionary spending above this amount may be requested as a budget item.
 
 **C.** All other spending must be approved by a vote of the Executive Board and recorded in the budget. The Treasurer shall not reimburse spending that has not been approved or that exceeds the budget.
 

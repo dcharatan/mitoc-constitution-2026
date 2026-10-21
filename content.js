@@ -387,7 +387,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 MITOC shall consist of an Executive Board, an Advisory Board, standing committees as delineated in the Bylaws, and special committees as created by the Executive Board. The Advisory Board shall consist of any positions deemed necessary by the Executive Board. Committee activities shall be managed by a chairperson as appointed by the Executive Board. Advisory Board members and committee chairpersons need not be MIT students and are not officers, unless they also hold an officer position.`
         },
         {
-          id: "c-art4-s2", notes: ["N16", "R4"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"]}, rest: "R4",
+          id: "c-art4-s2", notes: ["N16", "R4"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"], "-": ["Members-at-Large"]}, rest: "R4",
           old: `### Section 2: Officers
 A. Only MIT students are eligible to serve as officers in the organization. These officers, also referred to as the Executive Board, are listed below:
     1. President
@@ -404,7 +404,7 @@ A. Only MIT students are eligible to serve as officers in the organization. Thes
     2. Vice President
     3. Treasurer
     4. Bursar
-    5. Five members at-large
+    5. Five Members-at-Large
 B. The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
 C. All officers shall be listed on MITOC’s Engage officer roster.`
         },
@@ -428,7 +428,7 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
     5. Only MIT students may be candidates for Executive Board positions.
     6. All members of the general membership may vote. The moderator decides how votes are cast and counted, using anonymous voting where possible.
     7. For single-seat Executive Board positions, a candidate needs the votes of a majority of the members present; if no candidate has a majority, a runoff is held between the top two.
-    8. For member at-large, each member who is not a candidate for member at-large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.`
+    8. For Member-at-Large, each member who is not a candidate for Member-at-Large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.`
         },
         {
           id: "c-art4-s3-terms", notes: ["R7"], whole: true,
@@ -469,7 +469,7 @@ A. The President shall preside over all meetings of the Executive Board, Advisor
 B. The Vice President shall record the minutes of Executive Board and general membership meetings, manage MITOC’s email lists, respond to public inquiries, and preside over meetings in the President’s absence.
 C. The Treasurer shall prepare the annual budget for approval by the Executive Board; review, approve, and process reimbursements and other outgoing transactions; prepare the annual financial report in consultation with the Bursar; and manage the financial signatory access of MITOC’s officers with SOLE.
 D. The Bursar shall manage MITOC’s revenue, including the deposit of checks with SOLE; coordinate applications for funding; and assist the Treasurer with the annual budget and financial report.
-E. The members at-large shall lead larger club projects and assist the other members of the Executive Board as needed.
+E. The Members-at-Large shall lead larger club projects and assist the other members of the Executive Board as needed.
 F. As core executive officers, the President and the Treasurer shall complete MIT’s required core officer training, complete MITOC’s annual re-registration with SOLE and the ASA, and keep MITOC’s Engage group page, including its officer, member, and participant rosters, accurate and up to date.
 G. Executive Board members shall carry out any further duties set out in the Bylaws.`
         },
@@ -646,7 +646,7 @@ A. The Executive Board shall have the following powers and duties:
     1. Attend all meetings of the MITOC general membership and Executive Board,
     2. Assist the other members of the Executive Board in their respective tasks,
     3. Serve MITOC in all other ways deemed necessary by the President.`,
-          new: `F. The Members at-Large must be MIT students and shall have the following powers and duties:
+          new: `F. The Members-at-Large must be MIT students and shall have the following powers and duties:
     1. Attend all meetings of the MITOC general membership and Executive Board,
     2. Lead larger club projects,
     3. Assist the other members of the Executive Board in their respective tasks,
@@ -696,7 +696,7 @@ B. Student members shall be privileged to do the following in MITOC:
 A. MIT Student Members must meet the following requirement:
     1. MIT Student Members must be MIT students, as defined in Article III of the Constitution.
 B. MIT Student Members shall be privileged to do the following in MITOC:
-    1. Serve in the positions of President, Vice President, Treasurer, Bursar or Member at-Large,
+    1. Serve in the positions of President, Vice President, Treasurer, Bursar or Member-at-Large,
     2. Vote in elections and on amendments at general meetings,
     3. Act in any of the ways privileged to MIT Community Members, Participating Members, or MITOC Guests.`
         },
@@ -821,7 +821,7 @@ B. All members of the Executive and Advisory Boards shall be permitted a total o
 C. All purchases over $100 or not pre-approved in the budget must be approved by the Executive Board.`,
           new: `## Article V - Financial Policies
 A. The Treasurer shall prepare an annual budget for approval by the Executive Board, normally at a budget meeting in June. Items may be added to the budget at other times by a vote of the Executive Board.
-B. Each Executive Board and Advisory Board position may oversee up to $100 of discretionary spending per month. If a position is shared between multiple people, they share a single spending cap; the only exception is the members at-large, each of whom has a separate cap. Discretionary spending may only be used for incidentals. The Treasurer approves discretionary spending. Discretionary spending above this amount may be requested as a budget item.
+B. Each Executive Board and Advisory Board position may oversee up to $100 of discretionary spending per month. If a position is shared between multiple people, they share a single spending cap; the only exception is the Members-at-Large, each of whom has a separate cap. Discretionary spending may only be used for incidentals. The Treasurer approves discretionary spending. Discretionary spending above this amount may be requested as a budget item.
 C. All other spending must be approved by a vote of the Executive Board and recorded in the budget. The Treasurer shall not reimburse spending that has not been approved or that exceeds the budget.`
         },
         {
