@@ -57,7 +57,7 @@
 - **3.** Coordinate the application for funding opportunities,
 - **4.** Serve MITOC in all other ways deemed necessary by the President.
 
-**F.** The Members-at-Large must be MIT students and shall have the following powers and duties:
+**F.** The Members-at-Large shall have the following powers and duties:
 
 - **1.** Attend all meetings of the MITOC general membership and Executive Board,
 - **2.** Lead larger club projects,
@@ -116,7 +116,7 @@ All members must complete and sign the MIT General Liability Waiver for Student 
 **C.** Limitations:
 
 - **1.** MIT Community Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
-- **2.** MIT Community Members may not serve on the Executive Board.
+- **2.** MIT Community Members may not be elected to the Executive Board.
 
 ### Section 3: Participating Members
 

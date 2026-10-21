@@ -139,11 +139,28 @@ window.MITOC = {
         { src: "Form", page: "2", text: "Required on Engage: “Current/Active Member Roster; Current/Active Participant and/or Advisor Roster (if applicable)”" }
       ]
     },
+    {
+      id: "N19", severity: "minor", source: "new", docs: ["constitution"],
+      title: "Decisions need a majority of the full Executive Board",
+      problem: "The old constitution lets a simple majority of the Executive Board members present, or of those who reply to an email vote, make a decision. In practice MITOC requires a majority of the whole Board, which is 5 of 9.",
+      fix: "Require a simple majority of the full Executive Board for in-person and email votes.",
+      cites: []
+    },
+    {
+      id: "N20", severity: "urgent", source: "new", docs: ["constitution", "bylaws"],
+      title: "Members-at-Large are not officers",
+      problem: "MIT requires every officer to be an MIT student. SOLE has approved treating the Members-at-Large as Executive Board members who are not officers, so a Member-at-Large who graduates can finish the term.",
+      fix: "",
+      cites: [
+        { src: "Form", page: "5", text: "“All individuals who hold officer positions in recognized student organizations are required to be MIT students.”" },
+        { src: "Handbook", page: "62", text: "“Officer: An MIT student that serves in a leadership role in a student organization.”" }
+      ]
+    },
 
     // ---------- Earlier review findings ----------
     {
       id: "R1", severity: "urgent", source: "review", docs: ["constitution", "bylaws"],
-      title: "Executive Board must consist of MIT students",
+      title: "Officers must be MIT students",
       problem: "",
       fix: "",
       cites: [
@@ -387,7 +404,7 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 MITOC shall consist of an Executive Board, an Advisory Board, standing committees as delineated in the Bylaws, and special committees as created by the Executive Board. The Advisory Board shall consist of any positions deemed necessary by the Executive Board. Committee activities shall be managed by a chairperson as appointed by the Executive Board. Advisory Board members and committee chairpersons need not be MIT students and are not officers, unless they also hold an officer position.`
         },
         {
-          id: "c-art4-s2", notes: ["N16", "R4"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"], "-": ["Members-at-Large"]}, rest: "R4",
+          id: "c-art4-s2", notes: ["N20", "N16"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"]}, rest: "N20",
           old: `### Section 2: Officers
 A. Only MIT students are eligible to serve as officers in the organization. These officers, also referred to as the Executive Board, are listed below:
     1. President
@@ -398,15 +415,11 @@ A. Only MIT students are eligible to serve as officers in the organization. Thes
 B. The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
 C. The Advisory Board shall consist of any positions deemed necessary by the Executive Board.
 D. Committee activities shall be managed by a chairperson as appointed by the Executive Board.`,
-          new: `### Section 2: Officers
-A. Only MIT students are eligible to serve as officers in the organization. These officers, also referred to as the Executive Board, are listed below:
-    1. President
-    2. Vice President
-    3. Treasurer
-    4. Bursar
-    5. Five Members-at-Large
-B. The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
-C. All officers shall be listed on MITOC’s Engage officer roster.`
+          new: `### Section 2: Officers and Executive Board
+A. Only MIT students are eligible to serve as officers in the organization. The organization’s officers are the President, Vice President, Treasurer, and Bursar.
+B. The organization’s Executive Board consists of the four officers named above and five Members-at-Large. At least two thirds of the Executive Board must be MIT students.
+C. The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
+D. All officers shall be listed on MITOC’s Engage officer roster.`
         },
         {
           id: "c-art4-s3-head", notes: ["R7"],
@@ -431,14 +444,15 @@ C. All officers shall be listed on MITOC’s Engage officer roster.`
     8. For Member-at-Large, each member who is not a candidate for Member-at-Large may vote for up to five candidates, and the five candidates with the most votes are elected, with any tie for the last seat decided by a runoff.`
         },
         {
-          id: "c-art4-s3-terms", notes: ["R7"], whole: true,
+          id: "c-art4-s3-terms", notes: ["R7", "N20"], whole: true,
           old: null,
           new: `B. Terms of Office
     1. Executive Board members serve one-year terms, from the end of one April election meeting to the end of the next. Newly elected officers assume their roles at the conclusion of the election meeting.
     2. If an annual election is delayed, Executive Board members continue to serve until their successors are elected, so that every office is held on every day of the year.
     3. An Executive Board member elected to fill a vacancy serves the remainder of the vacant term.
     4. If an officer ceases to be an MIT student, including by taking a leave of absence, the position is vacant and shall be filled under Section 3.D.
-    5. The outgoing and incoming officers shall transition in an orderly fashion to avoid disruption to the organization. Outgoing officers shall pass on relevant information, documents, and account access to their successors.`
+    5. A Member-at-Large who ceases to be an MIT student may continue to serve provided that at least two thirds of the Executive Board remain MIT students; otherwise the position is vacant and shall be filled under Section 3.D.
+    6. The outgoing and incoming officers shall transition in an orderly fashion to avoid disruption to the organization. Outgoing officers shall pass on relevant information, documents, and account access to their successors.`
         },
         {
           id: "c-art4-s3-appointments", notes: ["R4", "R14"], links: {"R14": ["Newly elected officers assume their roles at the conclusion of the annual elections"], "R4": ["Advisory Board members and", "Except for the Mediation Chairs"]}, rest: "R14",
@@ -482,7 +496,7 @@ C. For asynchronous email votes, a simple majority of officers who actively part
           new: null
         },
         {
-          id: "c-art5", notes: ["R11", "N3", "N4"], links: {"N4": ["regular student status"], "R11": ["This meeting, open to all members"]}, rest: "N3",
+          id: "c-art5", notes: ["R11", "N3", "N4", "N19"], links: {"N4": ["regular student status"], "R11": ["This meeting, open to all members"], "N19": ["full Executive Board"]}, rest: "N3",
           old: `## Article V - Meetings
 A. The general membership of MITOC shall meet, with the Executive and Advisory Boards, on a monthly basis.
 B. Special meetings of the Executive Board or of the general membership may be called by the President or any three members of the Executive Board who have regular student status by giving written notice and justification to the general membership.
@@ -493,8 +507,8 @@ B. Special meetings of the Executive Board or of the general membership may be c
 C. Meetings shall be presided over by the President unless they are absent, and in that case the Vice President shall preside.
 D. Quorum and decisions
     1. A quorum for general meetings shall consist of a majority of the Executive Board in attendance.
-    2. For in-person votes, once a quorum is established, a simple majority of the Executive Board present is required for a decision.
-    3. For asynchronous email votes, a simple majority of Executive Board members who actively participate (i.e., do not abstain) is required for a decision. Upon receiving a call to vote, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
+    2. For in-person votes, once a quorum is established, a simple majority of the full Executive Board is required for a decision.
+    3. For asynchronous email votes, a simple majority of the full Executive Board is required for a decision. Upon receiving a call to vote, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
     4. Executive Board elections and amendment votes require the quorum set out in Article IV, Section 3.A.2. All other elections require only the quorum in item 1.`
         },
         {
@@ -641,12 +655,12 @@ A. The Executive Board shall have the following powers and duties:
     4. Serve MITOC in all other ways deemed necessary by the President.`
         },
         {
-          id: "b-1f", notes: ["R1", "R17"], links: {"R1": ["must be MIT students and"]}, rest: "R17",
+          id: "b-1f", notes: ["N20", "R17"], links: {"N20": ["must be MIT students and"], "-": ["Members-at-Large"]}, rest: "R17",
           old: `F. The Members at-Large shall have the following powers and duties:
     1. Attend all meetings of the MITOC general membership and Executive Board,
     2. Assist the other members of the Executive Board in their respective tasks,
     3. Serve MITOC in all other ways deemed necessary by the President.`,
-          new: `F. The Members-at-Large must be MIT students and shall have the following powers and duties:
+          new: `F. The Members-at-Large shall have the following powers and duties:
     1. Attend all meetings of the MITOC general membership and Executive Board,
     2. Lead larger club projects,
     3. Assist the other members of the Executive Board in their respective tasks,
@@ -701,7 +715,7 @@ B. MIT Student Members shall be privileged to do the following in MITOC:
     3. Act in any of the ways privileged to MIT Community Members, Participating Members, or MITOC Guests.`
         },
         {
-          id: "b-2s2", notes: ["R3", "R1", "N12", "N18"], links: {"N18": ["Participating Member"], "R1": ["may not serve on the Executive Board"], "N12": ["must meet the definition"]}, rest: "R3",
+          id: "b-2s2", notes: ["R3", "N12", "N18", "N20"], links: {"N18": ["Participating Member"], "N20": ["may not be elected to the Executive Board"], "N12": ["must meet the definition"]}, rest: "R3",
           old: `### Section 2: Community Members
 A. Community members must meet the following requirements:
     1. Community members must be current MIT faculty, staff, fellows, employees, affiliates, have visitor appointments, or have a current Kerberos.
@@ -717,7 +731,7 @@ B. MIT Community Members shall be privileged to do the following in MITOC:
     2. Act in any of the ways privileged to Participating Members or MITOC Guests.
 C. Limitations:
     1. MIT Community Members shall not be permitted to participate in MITOC to the detriment of MIT Student Members, as deemed by the Executive Board.
-    2. MIT Community Members may not serve on the Executive Board.`
+    2. MIT Community Members may not be elected to the Executive Board.`
         },
         {
           id: "b-2s3", notes: ["R3", "R1", "R18", "N17", "N18"], links: {"N18": ["Participating Member"], "R18": ["with the approval of the Executive Board and the Safety Committee"], "R1": ["Serve as Executive Board members at-large"], "N17": ["Receive MITOC discounts"]}, rest: "R3",

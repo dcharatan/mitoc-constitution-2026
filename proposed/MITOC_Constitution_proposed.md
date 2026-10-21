@@ -24,19 +24,15 @@ The organization shall not discriminate based on any characteristic listed in th
 
 MITOC shall consist of an Executive Board, an Advisory Board, standing committees as delineated in the Bylaws, and special committees as created by the Executive Board. The Advisory Board shall consist of any positions deemed necessary by the Executive Board. Committee activities shall be managed by a chairperson as appointed by the Executive Board. Advisory Board members and committee chairpersons need not be MIT students and are not officers, unless they also hold an officer position.
 
-### Section 2: Officers
+### Section 2: Officers and Executive Board
 
-**A.** Only MIT students are eligible to serve as officers in the organization. These officers, also referred to as the Executive Board, are listed below:
+**A.** Only MIT students are eligible to serve as officers in the organization. The organization’s officers are the President, Vice President, Treasurer, and Bursar.
 
-- **1.** President
-- **2.** Vice President
-- **3.** Treasurer
-- **4.** Bursar
-- **5.** Five Members-at-Large
+**B.** The organization’s Executive Board consists of the four officers named above and five Members-at-Large. At least two thirds of the Executive Board must be MIT students.
 
-**B.** The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
+**C.** The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
 
-**C.** All officers shall be listed on MITOC’s Engage officer roster.
+**D.** All officers shall be listed on MITOC’s Engage officer roster.
 
 ### Section 3: Elections, Terms, Appointments, and Vacancies
 
@@ -57,7 +53,8 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 - **2.** If an annual election is delayed, Executive Board members continue to serve until their successors are elected, so that every office is held on every day of the year.
 - **3.** An Executive Board member elected to fill a vacancy serves the remainder of the vacant term.
 - **4.** If an officer ceases to be an MIT student, including by taking a leave of absence, the position is vacant and shall be filled under Section 3.D.
-- **5.** The outgoing and incoming officers shall transition in an orderly fashion to avoid disruption to the organization. Outgoing officers shall pass on relevant information, documents, and account access to their successors.
+- **5.** A Member-at-Large who ceases to be an MIT student may continue to serve provided that at least two thirds of the Executive Board remain MIT students; otherwise the position is vacant and shall be filled under Section 3.D.
+- **6.** The outgoing and incoming officers shall transition in an orderly fashion to avoid disruption to the organization. Outgoing officers shall pass on relevant information, documents, and account access to their successors.
 
 **C.** Appointments
 
@@ -97,8 +94,8 @@ MITOC shall consist of an Executive Board, an Advisory Board, standing committee
 **D.** Quorum and decisions
 
 - **1.** A quorum for general meetings shall consist of a majority of the Executive Board in attendance.
-- **2.** For in-person votes, once a quorum is established, a simple majority of the Executive Board present is required for a decision.
-- **3.** For asynchronous email votes, a simple majority of Executive Board members who actively participate (i.e., do not abstain) is required for a decision. Upon receiving a call to vote, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
+- **2.** For in-person votes, once a quorum is established, a simple majority of the full Executive Board is required for a decision.
+- **3.** For asynchronous email votes, a simple majority of the full Executive Board is required for a decision. Upon receiving a call to vote, a 24-hour waiting period will begin before Executive Board members will have 48 hours to vote.
 - **4.** Executive Board elections and amendment votes require the quorum set out in Article IV, Section 3.A.2. All other elections require only the quorum in item 1.
 
 ## Article VI - Founding Documents and Amendments
