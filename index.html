@@ -96,7 +96,7 @@ main { padding-block: 14px 48px; }
 .diffmode .block.has-notes { border-top: 1px dashed var(--line); padding-top: 8px; margin-top: 4px; }
 .block.flash { background: var(--flash); }
 .block.unchanged .doctext { color: var(--muted); }
-.doctext { font-family: var(--font-doc); font-size: 0.97rem; line-height: 1.5; min-width: 0; max-width: 70ch; }
+.doctext { font-family: var(--font-doc); font-size: 0.97rem; line-height: 1.5; min-width: 0; max-width: 80ch; }
 .ln { margin: 0 0 0.35em; overflow-wrap: anywhere; }
 .k-title { font-size: 1.45rem; font-weight: 700; text-align: center; margin: 0 0 0.1em; text-wrap: balance; line-height: 1.25; }
 .k-subtitle { text-align: center; font-style: italic; color: var(--muted); margin-bottom: 0.9em; }
@@ -176,7 +176,7 @@ a { color: var(--accent); }
 .col-head .tools { padding-block: 0; }
 .split .diffmode .block { grid-template-columns: minmax(0, 1fr) 210px; gap: 8px 14px; }
 .split .sheet { padding: 20px clamp(12px, 1.4vw, 24px); }
-.split .doctext { max-width: none; }
+.split .doctext { max-width: 80ch; }
 .split .note { padding: 6px 8px; font-size: 0.76rem; }
 
 @media (max-width: 900px) {
