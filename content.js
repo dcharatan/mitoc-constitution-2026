@@ -159,17 +159,17 @@ window.MITOC = {
     {
       id: "N21", severity: "minor", source: "new", docs: ["constitution", "bylaws"],
       title: "Remove committee chairpersons",
-      problem: "The old documents require every committee to be managed by a chairperson who sits on the Advisory Board. In practice, the only committees are the two Safety Committees, and they have no chairpersons.",
-      fix: "Remove the committee chairperson requirement, the references to committee chairpersons, and the Treasurer’s duty to chair a budget committee.",
+      problem: "The old documents require every committee to be managed by a chairperson who sits on the Advisory Board. In practice, they usually have no chairperson. Committee members are still appointed by the Executive Board.",
+      fix: "Remove the committee chairperson requirement and the references to committee chairpersons, including the Treasurer’s duty to chair a budget committee. Keep the appointment of committee members by the Executive Board.",
       cites: [
         { src: "Handbook", page: "6", text: "Good standing requires “Activities and operations that are in alignment with their constitution as approved by the ASA.”" }
       ]
     },
     {
       id: "N22", severity: "minor", source: "new", docs: ["constitution", "bylaws"],
-      title: "Desk Captains are officers",
-      problem: "The Desk Captains manage the desk workers’ access to the MITOC office, which is done through Engage and requires being listed there as an officer. The old documents do not name the Desk Captains, and only MIT students may be officers.",
-      fix: "Name the Desk Captains in the Advisory Board section of the Bylaws, make them officers, and require them to be MIT students.",
+      title: "Office Access Manager is an officer",
+      problem: "Access to the MITOC office is managed through Engage, which requires being listed there as an officer, and only MIT students may be officers. The old documents have no position for this.",
+      fix: "Add an Office Access Manager to the Advisory Board in the Bylaws, make the position an officer, and require that it be held by an MIT student. In practice, the student Desk Captain will hold this position.",
       cites: [
         { src: "Form", page: "5", text: "“All individuals who hold officer positions in recognized student organizations are required to be MIT students. Your student organization is also required to have all current active officers listed on the student organization's group page on Engage.”" }
       ]
@@ -419,10 +419,10 @@ For purposes of this Constitution and the Bylaws, “MIT student” shall mean a
 MITOC shall consist of an Executive Board, an Advisory Board, standing committees as delineated in the Bylaws, and special committees as created by the Executive Board.`,
           new: `## Article IV - Organization
 ### Section 1: Structure
-MITOC shall consist of an Executive Board, an Advisory Board, standing committees as delineated in the Bylaws, and special committees as created by the Executive Board. The Advisory Board shall consist of any positions deemed necessary by the Executive Board. Advisory Board members other than the Desk Captains need not be MIT students and are not officers, unless they also hold an officer position.`
+MITOC shall consist of an Executive Board, an Advisory Board, standing committees as delineated in the Bylaws, and special committees as created by the Executive Board. The Advisory Board shall consist of any positions deemed necessary by the Executive Board. Advisory Board members other than the Office Access Manager need not be MIT students and are not officers, unless they also hold an officer position.`
         },
         {
-          id: "c-art4-s2", notes: ["N20", "N16", "N21", "N22"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"], "N21": ["Committee activities shall be managed"], "N20": ["The organization’s officers are the President"], "N22": ["Desk Captains"]}, rest: "N20",
+          id: "c-art4-s2", notes: ["N20", "N16", "N21", "N22"], links: {"N16": ["All officers shall be listed on MITOC’s Engage officer roster"], "N21": ["Committee activities shall be managed"], "N20": ["The organization’s officers are the President"], "N22": ["Office Access Manager"]}, rest: "N20",
           old: `### Section 2: Officers
 A. Only MIT students are eligible to serve as officers in the organization. These officers, also referred to as the Executive Board, are listed below:
     1. President
@@ -434,7 +434,7 @@ B. The executive board of the organization must include at least one president a
 C. The Advisory Board shall consist of any positions deemed necessary by the Executive Board.
 D. Committee activities shall be managed by a chairperson as appointed by the Executive Board.`,
           new: `### Section 2: Officers and Executive Board
-A. Only MIT students are eligible to serve as officers in the organization. The organization’s officers are the President, Vice President, Treasurer, Bursar, and Desk Captains.
+A. Only MIT students are eligible to serve as officers in the organization. The organization’s officers are the President, Vice President, Treasurer, Bursar, and Office Access Manager.
 B. The organization’s Executive Board consists of the President, Vice President, Treasurer, and Bursar, and five Members-at-Large. At least two thirds of the Executive Board must be MIT students.
 C. The executive board of the organization must include at least one president and one treasurer (or corresponding positions) and each officer role must be held by a distinct MIT student, meaning one student cannot serve as both president and treasurer simultaneously.
 D. All officers shall be listed on MITOC’s Engage officer roster.`
@@ -468,18 +468,17 @@ D. All officers shall be listed on MITOC’s Engage officer roster.`
     1. Executive Board members serve one-year terms, from the end of one April election meeting to the end of the next. Newly elected officers assume their roles at the conclusion of the election meeting.
     2. If an annual election is delayed, Executive Board members continue to serve until their successors are elected, so that every office is held on every day of the year.
     3. An Executive Board member elected to fill a vacancy serves the remainder of the vacant term.
-    4. If an officer other than a Desk Captain ceases to be an MIT student, including by taking a leave of absence, the position is vacant and shall be filled under Section 3.D.
+    4. If an officer ceases to be an MIT student, including by taking a leave of absence, the position is vacant and shall be filled under Section 3.C or 3.D, as applicable.
     5. A Member-at-Large who ceases to be an MIT student may continue to serve provided that at least two thirds of the Executive Board remain MIT students; otherwise the position is vacant and shall be filled under Section 3.D.
-    6. Desk Captains serve from their selection until their successors are selected under Section 3.C. If a Desk Captain ceases to be an MIT student, including by taking a leave of absence, the position is vacant and shall be filled under Section 3.C.
-    7. The outgoing and incoming officers shall transition in an orderly fashion to avoid disruption to the organization. Outgoing officers shall pass on relevant information, documents, and account access to their successors.`
+    6. The outgoing and incoming officers shall transition in an orderly fashion to avoid disruption to the organization. Outgoing officers shall pass on relevant information, documents, and account access to their successors.`
         },
         {
-          id: "c-art4-s3-appointments", notes: ["R4", "R14", "N21"], links: {"N21": ["Committee chairpersons"], "R14": ["Newly elected officers assume their roles at the conclusion of the annual elections"], "R4": ["Advisory Board members shall", "Except for the Mediation Chairs"]}, rest: "R14",
+          id: "c-art4-s3-appointments", notes: ["R4", "R14", "N21"], links: {"N21": ["Committee chairpersons"], "R14": ["Newly elected officers assume their roles at the conclusion of the annual elections"], "R4": ["Advisory Board members and", "Except for the Mediation Chairs"]}, rest: "R14",
           old: `B. Appointments
     1. Committee chairpersons shall be appointed by the Executive Board in accordance with the Bylaws.
     2. Newly elected officers assume their roles at the conclusion of the annual elections in the spring.`,
           new: `C. Appointments
-    1. Advisory Board members shall be appointed by the Executive Board in accordance with the Bylaws.
+    1. Advisory Board members and committee members shall be appointed by the Executive Board in accordance with the Bylaws.
     2. Except for the Mediation Chairs and the Safety Committees, the Executive Board may instead fill a position by election at the annual election meeting or at another general meeting, subject to the quorum for that meeting set out in Article V, Section D.`
         },
         {
@@ -494,7 +493,7 @@ D. All officers shall be listed on MITOC’s Engage officer roster.`
     3. The President or Treasurer shall update the Engage officer roster promptly after any change in officers.`
         },
         {
-          id: "c-art4-s4", notes: ["R8", "N22"], links: {"N22": ["The Desk Captains shall manage", "Officers and Executive Board members"]}, rest: "R8",
+          id: "c-art4-s4", notes: ["R8", "N22"], links: {"N22": ["The Office Access Manager shall manage", "Officers and Executive Board members"]}, rest: "R8",
           old: `### Section 4: Powers
 All officers of MITOC shall act in accordance with the Bylaws.`,
           new: `### Section 4: Powers and Duties
@@ -503,7 +502,7 @@ B. The Vice President shall record the minutes of Executive Board and general me
 C. The Treasurer shall prepare the annual budget for approval by the Executive Board; review, approve, and process reimbursements and other outgoing transactions; prepare the annual financial report in consultation with the Bursar; and manage the financial signatory access of MITOC’s officers with SOLE.
 D. The Bursar shall manage MITOC’s revenue, including the deposit of checks with SOLE; coordinate applications for funding; and assist the Treasurer with the annual budget and financial report.
 E. The Members-at-Large shall organize larger club projects and assist the other members of the Executive Board as needed.
-F. The Desk Captains shall manage the gear rental desk, train the desk workers, and manage their access to the MITOC office.
+F. The Office Access Manager shall manage access to the MITOC office.
 G. As core executive officers, the President and the Treasurer shall complete MIT’s required core officer training, complete MITOC’s annual re-registration with SOLE and the ASA, and keep MITOC’s Engage group page, including its officer, member, and participant rosters, accurate and up to date.
 H. Officers and Executive Board members shall carry out any further duties set out in the Bylaws.`
         },
@@ -686,7 +685,7 @@ A. The Executive Board shall have the following powers and duties:
     4. Serve MITOC in all other ways deemed necessary by the President.`
         },
         {
-          id: "b-1g", notes: ["R4", "N22"], links: {"N22": ["The Advisory Board includes the Desk Captains", "Desk Captains must be MIT students"]}, rest: "R4",
+          id: "b-1g", notes: ["R4", "N22"], links: {"N22": ["The Advisory Board includes the Office Access Manager", "The Office Access Manager must be an MIT student"]}, rest: "R4",
           old: `G. The Advisory Board shall have the following powers and duties:
     1. Advise the Executive Board on best and previous practices and policies,
     2. Assist the Executive Board in managing MITOC activities,
@@ -696,12 +695,10 @@ A. The Advisory Board shall have the following powers and duties:
     1. Advise the Executive Board on best and previous practices and policies,
     2. Assist the Executive Board in managing MITOC activities,
     3. Serve MITOC in all other ways deemed necessary by the Executive Board.
-B. The Advisory Board includes the Desk Captains, who shall have the following powers and duties:
-    1. Manage the gear rental desk,
-    2. Train the desk workers,
-    3. Manage the desk workers’ access to the MITOC office, including through Engage,
-    4. Serve MITOC in all other ways deemed necessary by the Executive Board.
-C. Desk Captains must be MIT students and are officers of MITOC, as provided in Article IV, Section 2 of the Constitution.`
+B. The Advisory Board includes the Office Access Manager, who shall have the following powers and duties:
+    1. Manage access to the MITOC office, including through Engage,
+    2. Serve MITOC in all other ways deemed necessary by the Executive Board.
+C. The Office Access Manager must be an MIT student and is an officer of MITOC, as provided in Article IV, Section 2 of the Constitution.`
         },
         {
           id: "b-2", notes: ["R3", "N12", "N8", "N10", "N18"], links: {"N18": ["Participating Member"], "N12": ["Participation in MITOC shall consist of the following", "MIT Student Members: MIT students", "MITOC Guests: non-members", "Participating Members: MIT Student Members", "MIT Community Members: individuals who are not MIT students"], "N8": ["waive dues"], "N10": ["Liability Waiver"]}, rest: "R3",
